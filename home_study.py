@@ -1,5 +1,4 @@
 # arithmetic mean
-
 # result = 0
 # count = 0
 # temp_var = 0
@@ -29,12 +28,12 @@
 
 # random generate
 
-# import random
-# import string
-#
-# alphanum = "0123456789!@#$%^&*ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-# length = 12
-#
-# password = ''.join(random.choice(alphanum) for _ in range(length))
-#
-# print(password)
+import random
+import string
+
+alphanum = "0123456789!@#$%^&*ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+length = 12
+
+password = ''.join(random.choice(alphanum) for _ in range(length))
+
+print(password)
