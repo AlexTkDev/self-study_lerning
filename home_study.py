@@ -29,12 +29,12 @@
 
 # random generate
 
-import random
-import string
-
-alphanum = "0123456789!@#$%^&*ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-length = 12
-
-password = ''.join(random.choice(alphanum) for _ in range(length))
-
-print(password)
+# import random
+# import string
+#
+# alphanum = "0123456789!@#$%^&*ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+# length = 12
+#
+# password = ''.join(random.choice(alphanum) for _ in range(length))
+#
+# print(password)
