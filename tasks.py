@@ -80,3 +80,12 @@
 #
 #
 # print(key_user(user_dict))
+
+
+# st = "spam"
+# print(st[-1::-1])
+
+# st ="spam"
+# for x in st:
+#     print(x, end="_")
+
