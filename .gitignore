@@ -8,8 +8,6 @@ self-study_lerning/test.py
 # C extensions
 *.so
 
-self-study_lerning/test.py
-
 # Distribution / packaging
 .Python
 build/
