@@ -58,16 +58,19 @@
 
 
 def most_frequent(data: list[str]) -> str:
-    most_common = None
-    counter = 0
+    # most_common = None
+    # counter = 0
+    #
+    # for item in data:
+    #     a = data.count(item)
+    #     if a > counter:
+    #         most_common = item
+    #         counter += 1
+    #
+    # return most_common
 
-    for item in data:
-        a = data.count(item)
-        if a > counter:
-            most_common = item
-            counter += 1
-
-    return most_common
+    # or
+    return max(data, key=data.count)
 
 
 print("Example:")
