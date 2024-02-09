@@ -132,21 +132,46 @@
     Твоя задача знайти, на яку кількість нулів закінчується передане число.
 """
 
+#
+# def end_zeros(a: int) -> int:
+#     # your code here
+#     return len(str(a)) - len(str(a).strip("0"))
+#
+#
+# print("Example:")
+# print(end_zeros(10))
+#
+# # These "asserts" are used for self-checking
+# assert end_zeros(0) == 1
+# assert end_zeros(1) == 0
+# assert end_zeros(10) == 1
+# assert end_zeros(101) == 0
+# assert end_zeros(245) == 0
+# assert end_zeros(100100) == 2
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
 
-def end_zeros(a: int) -> int:
-    # your code here
-    return len(str(a)) - len(str(a).strip("0"))
+"""
+    У цій місії ви повинні перевірити, чи всі елементи вказані в списку є однаковими.
+"""
+
+from typing import List, Any
+
+
+def all_the_same(elements: List[Any]) -> bool:
+    res = all(x == elements[0] for x in elements)
+    return res
 
 
 print("Example:")
-print(end_zeros(10))
+print(all_the_same([1, 1, 1]))
 
 # These "asserts" are used for self-checking
-assert end_zeros(0) == 1
-assert end_zeros(1) == 0
-assert end_zeros(10) == 1
-assert end_zeros(101) == 0
-assert end_zeros(245) == 0
-assert end_zeros(100100) == 2
+assert all_the_same([1, 1, 1]) == True
+assert all_the_same([1, 2, 1]) == False
+assert all_the_same([1, "a", 1]) == False
+assert all_the_same([1, 1, 1, 2]) == False
+assert all_the_same([]) == True
+assert all_the_same([1]) == True
 
 print("The mission is done! Click 'Check Solution' to earn rewards!")
