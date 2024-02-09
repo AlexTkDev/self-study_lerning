@@ -155,23 +155,74 @@
     У цій місії ви повинні перевірити, чи всі елементи вказані в списку є однаковими.
 """
 
-from typing import List, Any
+# from typing import List, Any
+#
+#
+# def all_the_same(elements: List[Any]) -> bool:
+#     res = all(x == elements[0] for x in elements)
+#     return res
+#
+#
+# print("Example:")
+# print(all_the_same([1, 1, 1]))
+#
+# # These "asserts" are used for self-checking
+# assert all_the_same([1, 1, 1]) == True
+# assert all_the_same([1, 2, 1]) == False
+# assert all_the_same([1, "a", 1]) == False
+# assert all_the_same([1, 1, 1, 2]) == False
+# assert all_the_same([]) == True
+# assert all_the_same([1]) == True
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+"""
+    Твоє завдання тут, це створити функцію, що приймає кортеж і повертає кортеж лише з 3 елементами - першим,
+    третім елементами від початку і другим елементом від кінця вхідного кортежу.
+ """
+
+#
+# def easy_unpack(elements: tuple) -> tuple:
+#     new_list = [elements[0], elements[2], elements[-2]]
+#     return tuple(new_list)
+#
+#
+# print("Example:")
+# print(easy_unpack((1, 2, 3, 4, 5, 6, 7, 9)))
+#
+# # These "asserts" are used for self-checking
+# assert easy_unpack((1, 2, 3, 4, 5, 6, 7, 9)) == (1, 3, 7)
+# assert easy_unpack((1, 1, 1, 1)) == (1, 1, 1)
+# assert easy_unpack((6, 3, 7)) == (6, 7, 3)
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+"""
+    Вам нужно подсчитать количество цифр в данной строке.
+"""
 
 
-def all_the_same(elements: List[Any]) -> bool:
-    res = all(x == elements[0] for x in elements)
-    return res
+def count_digits(text: str) -> int:
+    res = list(filter(str.isdigit, text))
+    return len(res)
 
 
 print("Example:")
-print(all_the_same([1, 1, 1]))
+print(count_digits(""))
 
 # These "asserts" are used for self-checking
-assert all_the_same([1, 1, 1]) == True
-assert all_the_same([1, 2, 1]) == False
-assert all_the_same([1, "a", 1]) == False
-assert all_the_same([1, 1, 1, 2]) == False
-assert all_the_same([]) == True
-assert all_the_same([1]) == True
+assert count_digits("hi") == 0
+assert count_digits("who is 1st here") == 1
+assert count_digits("my numbers is 2") == 1
+assert (
+        count_digits(
+            "This picture is an oil on canvas painting by Danish artist Anna Petersen between 1845 and 1910 year"
+        )
+        == 8
+)
+assert count_digits("5 plus 6 is") == 2
+assert count_digits("") == 0
 
 print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
