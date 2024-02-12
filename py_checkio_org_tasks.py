@@ -197,32 +197,69 @@
 #
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
 
-"""
-    Вам нужно подсчитать количество цифр в данной строке.
-"""
+# """
+#     Вам нужно подсчитать количество цифр в данной строке.
+# """
+#
+#
+# def count_digits(text: str) -> int:
+#     res = list(filter(str.isdigit, text))
+#     return len(res)
+#
+#
+# print("Example:")
+# print(count_digits(""))
+#
+# # These "asserts" are used for self-checking
+# assert count_digits("hi") == 0
+# assert count_digits("who is 1st here") == 1
+# assert count_digits("my numbers is 2") == 1
+# assert (
+#         count_digits(
+#             "This picture is an oil on canvas painting by Danish artist Anna Petersen between 1845 and 1910 year"
+#         )
+#         == 8
+# )
+# assert count_digits("5 plus 6 is") == 2
+# assert count_digits("") == 0
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
 
 
-def count_digits(text: str) -> int:
-    res = list(filter(str.isdigit, text))
-    return len(res)
+"""
+    Не все элементы важны. Вам нужно удалить из список все элементы до указаного.
+    На примере мы имеем список [1, 2, 3, 4, 5] где нужно было удалить все элементы до 3 - 1 и 2 соответственно.
+    Есть два ньюанса: (1) если в списке нет элемента до которого нужно удалить остальные элементы, 
+    то список не должен измениться. (2) если list пустой, то он должен остаться пустым.
+    Входные данные: Список и элемент до которого нужно удалить другие элементы.
+"""
+from collections.abc import Iterable
+
+
+def remove_all_before(items: list, border: int) -> Iterable:
+    # your code here
+    return []
 
 
 print("Example:")
-print(count_digits(""))
+print(list(remove_all_before([1, 2, 3, 4, 5], 3)))
 
 # These "asserts" are used for self-checking
-assert count_digits("hi") == 0
-assert count_digits("who is 1st here") == 1
-assert count_digits("my numbers is 2") == 1
-assert (
-        count_digits(
-            "This picture is an oil on canvas painting by Danish artist Anna Petersen between 1845 and 1910 year"
-        )
-        == 8
-)
-assert count_digits("5 plus 6 is") == 2
-assert count_digits("") == 0
+assert list(remove_all_before([1, 2, 3, 4, 5], 3)) == [3, 4, 5]
+assert list(remove_all_before([1, 1, 2, 2, 3, 3], 2)) == [2, 2, 3, 3]
+assert list(remove_all_before([1, 1, 2, 4, 2, 3, 4], 2)) == [2, 4, 2, 3, 4]
+assert list(remove_all_before([1, 1, 5, 6, 7], 2)) == [1, 1, 5, 6, 7]
+assert list(remove_all_before([], 0)) == []
+assert list(remove_all_before([7, 7, 7, 7, 7, 7, 7, 7, 7], 7)) == [
+    7,
+    7,
+    7,
+    7,
+    7,
+    7,
+    7,
+    7,
+    7,
+]
 
 print("The mission is done! Click 'Check Solution' to earn rewards!")
-
-
