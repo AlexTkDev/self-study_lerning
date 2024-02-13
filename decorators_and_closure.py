@@ -42,7 +42,8 @@ def time_execution_func(func):
     def wrapper(*args, **kwargs):
         start_time = time.time()
         result = func(*args, **kwargs)
-        print("Время выполнения функции {} = {}".format(func, time.time() - start_time))
+        end_time = time.time()
+        print(f"Время выполнения функции {func} = {end_time - start_time}")
         return result
     return wrapper
 
