@@ -30,27 +30,26 @@
 
 # ------------------------------------------------------------
 
-# import functools
-# import time
-#
-#
-# def time_execution_func(func):
-#     """Этот декоратор принимает функцию и
-#      просчитывает время её выполнения"""
-#
-#     @functools.wraps(func)
-#     def wrapper(*args, **kwargs):
-#         start_time = time.time()
-#         result = func(*args, **kwargs)
-#         print(f"""Время выполнения функции {func} = {time.time() - start_time}""")
-#         return result
-#
-#     return wrapper
-#
-#
-# @time_execution_func
-# def power(a, b):
-#     return a ** b
-#
-#
-# print(power(2, 18))
+import functools
+import time
+
+
+def time_execution_func(func):
+    """Этот декоратор принимает функцию и
+     просчитывает время её выполнения"""
+
+    @functools.wraps(func)
+    def wrapper(*args, **kwargs):
+        start_time = time.time()
+        result = func(*args, **kwargs)
+        print("Время выполнения функции {} = {}".format(func, time.time() - start_time))
+        return result
+    return wrapper
+
+
+@time_execution_func
+def power(a, b):
+    return a ** b
+
+
+print(power(2, 18))
