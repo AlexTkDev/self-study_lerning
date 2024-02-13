@@ -56,7 +56,6 @@
      який рядок зустрічається найчастіше у цій сукупності.
 """
 
-
 # def most_frequent(data: list[str]) -> str:
 #     # most_common = None
 #     # counter = 0
@@ -90,7 +89,6 @@
      які є частиною слова.
     Текст складається з чисел, пробілів та літер з англійського алфавіту.
 """
-
 
 # def sum_numbers(text: str) -> int:
 #     res = 0
@@ -233,35 +231,80 @@
     то список не должен измениться. (2) если list пустой, то он должен остаться пустым.
     Входные данные: Список и элемент до которого нужно удалить другие элементы.
 """
-from collections.abc import Iterable
+
+# from collections.abc import Iterable
+#
+#
+# def remove_all_before(items: list, border: int) -> Iterable:
+# #     try:
+# #         return items[items.index(border):]
+# #     except ValueError:
+# #         return items
+#
+#     ## or
+#     return items[items.index(border):] if border in items else items
+#
+#
+# print("Example:")
+# print(list(remove_all_before([1, 2, 3, 4, 5], 3)))
+#
+# # These "asserts" are used for self-checking
+# assert list(remove_all_before([1, 2, 3, 4, 5], 3)) == [3, 4, 5]
+# assert list(remove_all_before([1, 1, 2, 2, 3, 3], 2)) == [2, 2, 3, 3]
+# assert list(remove_all_before([1, 1, 2, 4, 2, 3, 4], 2)) == [2, 4, 2, 3, 4]
+# assert list(remove_all_before([1, 1, 5, 6, 7], 2)) == [1, 1, 5, 6, 7]
+# assert list(remove_all_before([], 0)) == []
+# assert list(remove_all_before([7, 7, 7, 7, 7, 7, 7, 7, 7], 7)) == [
+#     7,
+#     7,
+#     7,
+#     7,
+#     7,
+#     7,
+#     7,
+#     7,
+#     7,
+# ]
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
 
 
-def remove_all_before(items: list, border: int) -> Iterable:
-    try:
-        return items[items.index(border):]
-    except ValueError:
-        return items
+
+# from collections.abc import Iterable
+#
+#
+# def replace_first(items: list) -> Iterable:
+#     if len(items) <= 1:
+#         return items
+#
+#     last_item = items.pop(0)
+#     items.insert(len(items), last_item)
+#     return items
+#
+# # These "asserts" are used for self-checking
+# print("Example:")
+# print(list(replace_first([1, 2, 3, 4])))
+#
+# assert replace_first([1, 2, 3, 4]) == [2, 3, 4, 1]
+# assert replace_first([1]) == [1]
+# assert replace_first([]) == []
+# assert replace_first([1, 2, 2, 2]) == [2, 2, 2, 1]
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
 
 
-print("Example:")
-print(list(remove_all_before([1, 2, 3, 4, 5], 3)))
-
-# These "asserts" are used for self-checking
-assert list(remove_all_before([1, 2, 3, 4, 5], 3)) == [3, 4, 5]
-assert list(remove_all_before([1, 1, 2, 2, 3, 3], 2)) == [2, 2, 3, 3]
-assert list(remove_all_before([1, 1, 2, 4, 2, 3, 4], 2)) == [2, 4, 2, 3, 4]
-assert list(remove_all_before([1, 1, 5, 6, 7], 2)) == [1, 1, 5, 6, 7]
-assert list(remove_all_before([], 0)) == []
-assert list(remove_all_before([7, 7, 7, 7, 7, 7, 7, 7, 7], 7)) == [
-    7,
-    7,
-    7,
-    7,
-    7,
-    7,
-    7,
-    7,
-    7,
-]
-
-print("The mission is done! Click 'Check Solution' to earn rewards!")
+# def max_digit(value: int) -> int:
+#     return max(int(k) for k in str(value))
+#
+#
+# print("Example:")
+# print(max_digit(10))
+#
+# # These "asserts" are used for self-checking
+# assert max_digit(0) == 0
+# assert max_digit(52) == 5
+# assert max_digit(634) == 6
+# assert max_digit(1) == 1
+# assert max_digit(10000) == 1
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
