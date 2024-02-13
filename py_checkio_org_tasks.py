@@ -237,8 +237,10 @@ from collections.abc import Iterable
 
 
 def remove_all_before(items: list, border: int) -> Iterable:
-    # your code here
-    return []
+    try:
+        return items[items.index(border):]
+    except ValueError:
+        return items
 
 
 print("Example:")
