@@ -1,9 +1,3 @@
-"""
-    Дано текст і потрібно знайти його перше слово.
-    Даний текст містить англійські букви та пробіли.
-    На початку та у кінці пробілів немає.
-"""
-
 # def first_word(text: str) -> str:
 #     # your code here
 #     return text.split(" ")[0]
@@ -21,20 +15,6 @@
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
 
 
-"""
-    Перевір, чи є вхідне число парним чи ні. Твоя функція повинна повертати True, якщо число парне, 
-    і False, якщо число непарне.
-    Вхідні дані: Ціле число.
-    Вихідні дані: Булеве (логічне) значення.
-    
-### Эта функция is_even проверяет, является ли число четным. 
-    Она использует битовую операцию AND с числом 1 (num & 1).
-     Если число четное, то младший бит (последний бит) равен 0, и результат выражения num & 1 будет равен 0. 
-     Затем оператор not инвертирует результат, так что если num & 1 равно 0 (число четное), 
-     то not(num & 1) будет True, что и означает, что число четное.
-
-"""
-
 # def is_even(num: int) -> bool:
 #     # your code here
 #     return num & 1 == 0
@@ -50,11 +30,6 @@
 #
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
 
-
-"""
-    У тебе є послідовність рядків і тобі потрібно визначити,
-     який рядок зустрічається найчастіше у цій сукупності.
-"""
 
 # def most_frequent(data: list[str]) -> str:
 #     # most_common = None
@@ -84,11 +59,6 @@
 #
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
 
-"""
-    У заданому тексті тобі потрібно підсумувати числа, виключивши будь-які цифри,
-     які є частиною слова.
-    Текст складається з чисел, пробілів та літер з англійського алфавіту.
-"""
 
 # def sum_numbers(text: str) -> int:
 #     res = 0
@@ -126,9 +96,6 @@
 #
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
 
-"""
-    Твоя задача знайти, на яку кількість нулів закінчується передане число.
-"""
 
 #
 # def end_zeros(a: int) -> int:
@@ -149,9 +116,6 @@
 #
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
 
-"""
-    У цій місії ви повинні перевірити, чи всі елементи вказані в списку є однаковими.
-"""
 
 # from typing import List, Any
 #
@@ -174,12 +138,7 @@
 #
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
 
-"""
-    Твоє завдання тут, це створити функцію, що приймає кортеж і повертає кортеж лише з 3 елементами - першим,
-    третім елементами від початку і другим елементом від кінця вхідного кортежу.
- """
 
-#
 # def easy_unpack(elements: tuple) -> tuple:
 #     new_list = [elements[0], elements[2], elements[-2]]
 #     return tuple(new_list)
@@ -195,11 +154,7 @@
 #
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
 
-# """
-#     Вам нужно подсчитать количество цифр в данной строке.
-# """
-#
-#
+
 # def count_digits(text: str) -> int:
 #     res = list(filter(str.isdigit, text))
 #     return len(res)
@@ -223,14 +178,6 @@
 #
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
 
-
-"""
-    Не все элементы важны. Вам нужно удалить из список все элементы до указаного.
-    На примере мы имеем список [1, 2, 3, 4, 5] где нужно было удалить все элементы до 3 - 1 и 2 соответственно.
-    Есть два ньюанса: (1) если в списке нет элемента до которого нужно удалить остальные элементы, 
-    то список не должен измениться. (2) если list пустой, то он должен остаться пустым.
-    Входные данные: Список и элемент до которого нужно удалить другие элементы.
-"""
 
 # from collections.abc import Iterable
 #
@@ -267,7 +214,6 @@
 # ]
 #
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
-
 
 
 # from collections.abc import Iterable
@@ -307,4 +253,93 @@
 # assert max_digit(1) == 1
 # assert max_digit(10000) == 1
 #
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# def beginning_zeros(a: str) -> int:
+#     count = 0
+#     for letter in a:
+#         if letter in "0":
+#             count += 1
+#         else:
+#             break
+#     return count
+#
+#
+# print("Example:")
+# print(beginning_zeros("10"))
+#
+# # These "asserts" are used for self-checking
+# assert beginning_zeros("100") == 0
+# assert beginning_zeros("001") == 2
+# assert beginning_zeros("100100") == 0
+# assert beginning_zeros("001001") == 2
+# assert beginning_zeros("012345679") == 1
+# assert beginning_zeros("0000") == 4
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# def between_markers(text: str, start: str, end: str) -> str:
+#     s = text.find(start)
+#     e = text.find(end)
+#     return text[s + 1:e]
+#
+#
+# print("Example:")
+# print(between_markers("What is >apple<", ">", "<"))
+#
+# # These "asserts" are used for self-checking
+# assert between_markers("What is >apple<", ">", "<") == "apple"
+# assert between_markers("What is [apple]", "[", "]") == "apple"
+# assert between_markers("What is ><", ">", "<") == ""
+# assert between_markers("[an apple]", "[", "]") == "an apple"
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# from typing import Iterable
+# from textwrap import wrap
+#
+#
+# def split_pairs(text: str) -> Iterable[str]:
+#     return list(map(''.join, zip(*[iter(text + '_')]*2)))
+#
+#     # or
+#     # return (wrap(text if len(text) % 2 == 0 else text + '_', 2))
+#
+#
+#
+# print("Example:")
+# print(list(split_pairs("abcd")))
+#
+# assert list(split_pairs("abcd")) == ["ab", "cd"]
+# assert list(split_pairs("abc")) == ["ab", "c_"]
+# assert list(split_pairs("abcdf")) == ["ab", "cd", "f_"]
+# assert list(split_pairs("a")) == ["a_"]
+# assert list(split_pairs("")) == []
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+
+# def nearest_value(values: set[int], one: int) -> int:
+#     new_values = list(values)
+#     new_values.sort()
+#     dif = [abs(i - one) for i in new_values]
+#     return new_values[dif.index(min(dif))]
+#
+#
+# print("Example:")
+# print(nearest_value({4, 7, 10, 11, 12, 17}, 9))
+#
+# assert nearest_value({17, 4, 7, 10, 11, 12}, 9) == 10
+# assert nearest_value({17, 4, 7, 10, 11, 12}, 8) == 7
+# assert nearest_value({17, 4, 8, 10, 11, 12}, 9) == 8
+# assert nearest_value({17, 4, 9, 10, 11, 12}, 9) == 9
+# assert nearest_value({17, 4, 7, 10, 11, 12}, 0) == 4
+# assert nearest_value({17, 4, 7, 10, 11, 12}, 100) == 17
+# assert nearest_value({100, 5, 8, 89, 10, 12}, 7) == 8
+# assert nearest_value({2, 3, -1}, 0) == -1
+# assert nearest_value({5}, 5) == 5
+# assert nearest_value({5}, 7) == 5
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
