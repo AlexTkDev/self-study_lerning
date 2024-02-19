@@ -14,6 +14,8 @@
 #
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
 import itertools
+
+
 # def is_even(num: int) -> bool:
 #     # your code here
 #     return num & 1 == 0
@@ -320,7 +322,6 @@ import itertools
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
 
 
-
 # def nearest_value(values: set[int], one: int) -> int:
 #     new_values = list(values)
 #     new_values.sort()
@@ -392,3 +393,61 @@ import itertools
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
 
 
+# from collections.abc import Iterable
+#
+#
+# def checkio(data: list[int]) -> Iterable[int]:
+#     # result = []
+#     # for i in data:
+#     #     if data.count(i) != 1:
+#     #         result.append(i)
+#     # return result
+#
+#     # or
+#     return (i for i in data if data.count(i) != 1)
+#
+#
+# print("Example:")
+# print(list(checkio([1, 2, 3, 1, 3])))
+#
+# # These "asserts" are used for self-checking
+# assert list(checkio([1, 2, 3, 1, 3])) == [1, 3, 1, 3]
+# assert list(checkio([1, 2, 3, 4, 5])) == []
+# assert list(checkio([5, 5, 5, 5, 5])) == [5, 5, 5, 5, 5]
+# assert list(checkio([10, 9, 10, 10, 9, 8])) == [10, 9, 10, 10, 9]
+# assert list(checkio([2, 2, 3, 2, 2])) == [2, 2, 2, 2]
+# assert list(checkio([10, 20, 30, 10])) == [10, 10]
+# assert list(checkio([7])) == []
+# assert list(checkio([0, 1, 2, 3, 4, 0, 1, 2, 4])) == [0, 1, 2, 4, 0, 1, 2, 4]
+# assert list(checkio([99, 98, 99])) == [99, 99]
+# assert list(checkio([0, 0, 0, 1, 1, 100])) == [0, 0, 0, 1, 1]
+# assert list(checkio([0, 0, 0, -1, -1, 100])) == [0, 0, 0, -1, -1]
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# def checkio(array: list[int]) -> int:
+#     # if len(array) == 0:
+#     #     res = 0
+#     # else:
+#     #     res = sum(i for i in array[::2]) * array[-1]
+#     # return res
+#
+#     # or
+#     # if len(array) == 0: return 0
+#     # return sum(array[0::2] * array[-1])
+#
+#     # or
+#     return sum(array[0::2])*array[-1] if 0 < len(array) else 0
+#
+#
+# print("Example:")
+# print(checkio([0, 1, 2, 3, 4, 5]))
+#
+# # These "asserts" are used for self-checking
+# assert checkio([0, 1, 2, 3, 4, 5]) == 30
+# assert checkio([1, 3, 5]) == 30
+# assert checkio([6]) == 36
+# assert checkio([]) == 0
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
