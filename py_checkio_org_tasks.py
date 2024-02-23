@@ -15,7 +15,6 @@
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
 import itertools
 
-
 # def is_even(num: int) -> bool:
 #     # your code here
 #     return num & 1 == 0
@@ -451,3 +450,148 @@ import itertools
 # assert checkio([]) == 0
 #
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# def left_join(phrases: tuple[str]) -> str:
+#     # return ','.join(phrase.replace("right", "left") for phrase in phrases)
+#
+#     result = []
+#     for phrase in phrases:
+#         phrase = phrase.replace("right", "left")
+#         result.append(phrase)
+#     return ','.join(result)
+#
+#
+# print("Example:")
+# print(left_join(("left", "right", "left", "stop")))
+#
+# # These "asserts" are used for self-checking
+# assert left_join(("left", "right", "left", "stop")) == "left,left,left,stop"
+# assert left_join(("bright aright", "ok")) == "bleft aleft,ok"
+# assert left_join(("brightness wright",)) == "bleftness wleft"
+# assert left_join(("enough", "jokes")) == "enough,jokes"
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+# between_markers = lambda text, start, end: text[text.find(start) + 1: text.find(end)] if (idx_start := text.find(
+#     start)) != -1 and idx_start < text.find(end) else ''
+#
+# print("Example:")
+# print(between_markers("What is >apple<", ">", "<"))
+#
+# # These "asserts" are used for self-checking
+# assert between_markers("What is >apple<", ">", "<") == "apple"
+# assert between_markers("What is [apple]", "[", "]") == "apple"
+# assert between_markers("What is ><", ">", "<") == ""
+# assert between_markers("[an apple]", "[", "]") == "an apple"
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# def between_markers(text: str, begin: str, end: str) -> int:
+#     idx_begin = text.find(begin)
+#     idx_end = text.find(end)
+#     if idx_begin == -1 or idx_end == -1 or idx_begin > idx_end:
+#         return ""
+#     return text[idx_begin + len(begin):idx_end]
+#
+# print("Example:")
+# print(between_markers("What is >apple<", ">", "<"))
+#
+# # These "asserts" are used for self-checking
+# assert between_markers("What is >apple<", ">", "<") == "apple"
+# assert between_markers("What is [apple]", "[", "]") == "apple"
+# assert between_markers("What is ><", ">", "<") == ""
+# assert between_markers("[an apple]", "[", "]") == "an apple"
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# def first_word(text: str) -> str:
+#     text = text.replace('.', ' ').replace(',', ' ')
+#     text = text.strip().split()
+#     return text[0]
+#
+#
+# print("Example:")replace
+
+# print(first_word('Hello World'))
+#
+# # These "asserts" are used for self-checking
+# assert first_word("Hello world") == "Hello"
+# assert first_word(" a word ") == "a"
+# assert first_word("don't touch it") == "don't"
+# assert first_word("greetings, friends") == "greetings"
+# assert first_word("... and so on ...") == "and"
+# assert first_word("hi") == "hi"
+# assert first_word('Hello.World') == 'Hello'
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# def checkio(words: str) -> bool:
+#     new_words = words.split()
+#     for triple in zip(new_words, new_words[1:], new_words[2:]):
+#         if all(word.isalpha() for word in triple):
+#             return True
+#     return False
+#
+#
+# print("Example:")
+# print(checkio("Hello World hello"))
+#
+# # These "asserts" are used for self-checking
+# assert checkio("Hello World hello") == True
+# assert checkio("He is 123 man") == False
+# assert checkio("1 2 3 4") == False
+# assert checkio("bla bla bla bla") == True
+# assert checkio("Hi") == False
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+# from dateutil.parser import parse
+#
+#
+# def days_diff(a: tuple[int, int, int], b: tuple[int, int, int]) -> int:
+#     a_tmp = [str(i) for i in a]
+#     b_tmp = [str(i) for i in b]
+#     a_tmp = '/'.join(a_tmp)
+#     b_tmp = '/'.join(b_tmp)
+#     date1 = parse(a_tmp)
+#     date2 = parse(b_tmp)
+#     num_days = abs((date2 - date1).days)
+#     return num_days
+#
+# print("Example:")
+# print(days_diff((1982, 4, 19), (1982, 4, 22)))
+#
+# assert days_diff((1982, 4, 19), (1982, 4, 22)) == 3
+# assert days_diff((2014, 1, 1), (2014, 8, 27)) == 238
+# assert days_diff((2014, 8, 27), (2014, 1, 1)) == 238
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+from datetime import datetime
+
+
+def days_diff(a: tuple[int, int, int], b: tuple[int, int, int]) -> int:
+    a_tmp = '{:04d}/{:02d}/{:02d}'.format(*a)
+    b_tmp = '{:04d}/{:02d}/{:02d}'.format(*b)
+
+    date1 = datetime.strptime(a_tmp, '%Y/%m/%d')
+    date2 = datetime.strptime(b_tmp, '%Y/%m/%d')
+    num_days = abs((date2 - date1).days)
+    return num_days
+
+
+print("Example:")
+print(days_diff((696, 5, 7), (9241, 6, 27)))
+
+assert days_diff((1982, 4, 19), (1982, 4, 22)) == 3
+assert days_diff((2014, 1, 1), (2014, 8, 27)) == 238
+assert days_diff((2014, 8, 27), (2014, 1, 1)) == 238
+assert days_diff((1, 1, 1), (9999, 12, 31)) == 3652058
+assert days_diff((696, 5, 7), (9241, 6, 27)) == 3121048
+
+print("The mission is done! Click 'Check Solution' to earn rewards!")
