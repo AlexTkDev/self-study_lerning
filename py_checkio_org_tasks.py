@@ -572,26 +572,47 @@ import itertools
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
 
 
-from datetime import datetime
+# # from datetime import datetime
+# #
+# # def days_diff(a: tuple[int, int, int], b: tuple[int, int, int]) -> int:
+# #     a_tmp = '{:04d}/{:02d}/{:02d}'.format(*a)
+# #     b_tmp = '{:04d}/{:02d}/{:02d}'.format(*b)
+# #
+# #     date1 = datetime.strptime(a_tmp, '%Y/%m/%d')
+# #     date2 = datetime.strptime(b_tmp, '%Y/%m/%d')
+# #     num_days = abs((date2 - date1).days)
+# #     return num_days
+#
+# # or
+# from datetime import date
+# days_diff = lambda f, t: abs((date(*f) - date(*t)).days)
+# #
+# # print("Example:")
+# # print(days_diff((696, 5, 7), (9241, 6, 27)))
+# #
+# # assert days_diff((1982, 4, 19), (1982, 4, 22)) == 3
+# # assert days_diff((2014, 1, 1), (2014, 8, 27)) == 238
+# # assert days_diff((2014, 8, 27), (2014, 1, 1)) == 238
+# # assert days_diff((1, 1, 1), (9999, 12, 31)) == 3652058
+# # assert days_diff((696, 5, 7), (9241, 6, 27)) == 3121048
+# #
+# # print("The mission is done! Click 'Check Solution' to earn rewards!")
 
 
-def days_diff(a: tuple[int, int, int], b: tuple[int, int, int]) -> int:
-    a_tmp = '{:04d}/{:02d}/{:02d}'.format(*a)
-    b_tmp = '{:04d}/{:02d}/{:02d}'.format(*b)
-
-    date1 = datetime.strptime(a_tmp, '%Y/%m/%d')
-    date2 = datetime.strptime(b_tmp, '%Y/%m/%d')
-    num_days = abs((date2 - date1).days)
-    return num_days
-
-
-print("Example:")
-print(days_diff((696, 5, 7), (9241, 6, 27)))
-
-assert days_diff((1982, 4, 19), (1982, 4, 22)) == 3
-assert days_diff((2014, 1, 1), (2014, 8, 27)) == 238
-assert days_diff((2014, 8, 27), (2014, 1, 1)) == 238
-assert days_diff((1, 1, 1), (9999, 12, 31)) == 3652058
-assert days_diff((696, 5, 7), (9241, 6, 27)) == 3121048
-
-print("The mission is done! Click 'Check Solution' to earn rewards!")
+# def backward_string_by_word(text: str) -> str:
+#     a = text.split(" ")
+#     res = " ".join(a[::-1])
+#     return res[::-1]
+#
+#
+# print("Example:")
+# print(backward_string_by_word("hello world"))
+#
+# # These "asserts" are used for self-checking
+# assert backward_string_by_word("") == ""
+# assert backward_string_by_word("world") == "dlrow"
+# assert backward_string_by_word("hello world") == "olleh dlrow"
+# assert backward_string_by_word("hello   world") == "olleh   dlrow"
+# assert backward_string_by_word("welcome to a game") == "emoclew ot a emag"
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
