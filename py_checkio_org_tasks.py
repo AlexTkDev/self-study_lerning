@@ -15,6 +15,7 @@
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
 import itertools
 
+
 # def is_even(num: int) -> bool:
 #     # your code here
 #     return num & 1 == 0
@@ -614,5 +615,129 @@ import itertools
 # assert backward_string_by_word("hello world") == "olleh dlrow"
 # assert backward_string_by_word("hello   world") == "olleh   dlrow"
 # assert backward_string_by_word("welcome to a game") == "emoclew ot a emag"
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# def changing_direction(elements: list[int]) -> int:
+#     if len(elements) <= 1:
+#         return 0
+#
+#     last_direction = None
+#     direction_changes = 0
+#
+#     for i in range(1, len(elements)):
+#         current_element = elements[i]
+#         previous_element = elements[i - 1]
+#
+#         if current_element > previous_element:
+#             current_direction = "up"
+#         elif current_element < previous_element:
+#             current_direction = "down"
+#         else:
+#             current_direction = last_direction
+#
+#         if last_direction != current_direction:
+#             direction_changes += 1
+#
+#         last_direction = current_direction
+#
+#     res = direction_changes -1
+#
+#     return res
+#
+#
+# print("Example:")
+# print(changing_direction([1, 2, 3, 4, 5]))
+#
+# # These "asserts" are used for self-checking
+# assert changing_direction([1, 2, 3, 4, 5]) == 0
+# assert changing_direction([1, 2, 3, 2, 1]) == 1
+# assert changing_direction([1, 2, 2, 1, 2, 2]) == 2
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# def bigger_price(limit: int, data: list[dict]) -> list[dict]:
+#     sorted_data = sorted(data, key=lambda x: x['price'], reverse=True)
+#     return sorted_data[:limit]
+#
+#
+#
+# print("Example:")
+# print(
+#     bigger_price(
+#         2,
+#         [
+#             {"name": "bread", "price": 100},
+#             {"name": "wine", "price": 138},
+#             {"name": "meat", "price": 15},
+#             {"name": "water", "price": 1},
+#         ],
+#     )
+# )
+#
+# assert bigger_price(
+#     2,
+#     [
+#         {"name": "bread", "price": 100},
+#         {"name": "wine", "price": 138},
+#         {"name": "meat", "price": 15},
+#         {"name": "water", "price": 1},
+#     ],
+# ) == [{"name": "wine", "price": 138}, {"name": "bread", "price": 100}]
+# assert bigger_price(
+#     1, [{"name": "pen", "price": 5}, {"name": "whiteboard", "price": 170}]
+# ) == [{"name": "whiteboard", "price": 170}]
+
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# def popular_words(text: str, words: list) -> dict:
+#     text = text.lower().split()
+#     word_count = {word: text.count(word) for word in words}
+#     return word_count
+#
+#
+# print("Example:")
+# print(
+#     popular_words(
+#         """
+# When I was One
+# I had just begun
+# When I was Two
+# I was nearly new
+# """,
+#         ["i", "was", "three", "near"],
+#     )
+# )
+#
+# assert popular_words(
+#     "\nWhen I was One\nI had just begun\nWhen I was Two\nI was nearly new\n",
+#     ["i", "was", "three", "near"],
+# ) == {"i": 4, "was": 3, "three": 0, "near": 0}
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+# def second_index(text: str, symbol: str) -> int | None:
+#     a = []
+#     for i in enumerate(text):
+#         if symbol in i[1]:
+#             a.append(i[0])
+#
+#     return a[1] if len(a) >= 2 else None
+#
+#
+#
+#
+# print("Example:")
+# print(second_index("sims", "s"))
+#
+# # These "asserts" are used for self-checking
+# assert second_index("sims", "s") == 3
+# assert second_index("find the river", "e") == 12
+# assert second_index("hi", " ") == None
+# assert second_index("hi mayor", " ") == None
+# assert second_index("hi mr Mayor", " ") == 5
 #
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
