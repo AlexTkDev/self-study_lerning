@@ -741,3 +741,47 @@ import itertools
 # assert second_index("hi mr Mayor", " ") == 5
 #
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# def between_markers(text: str, begin: str, end: str) -> int:
+#     # idx_begin = text.find(begin)
+#     # idx_end = text.find(end)
+#     # if idx_begin == -1 and idx_end > -1:
+#     #     return text[:idx_end]
+#     # elif idx_end == -1 and idx_begin > -1:
+#     #     return text[idx_begin + len(begin):]
+#     # elif idx_end == -1 and idx_begin == -1:
+#     #     return text
+#     # elif idx_begin == -1 or idx_end == -1 or idx_begin > idx_end:
+#     #     return ""
+#     # else:
+#     #     return text[idx_begin + len(begin):idx_end]
+#
+#     # or
+#     idx_begin = text.find(begin)
+#     idx_end = text.find(end)
+#
+#     match (idx_begin == -1, idx_end == -1):
+#         case (True, True):
+#             return text
+#         case (True, False):
+#             return text[:idx_end]
+#         case (False, True):
+#             return text[idx_begin + len(begin):]
+#         case _:
+#             return text[idx_begin + len(begin):idx_end]
+#
+#
+# print("Example:")
+# print(between_markers("No hi", "[b]", "[/b]"))
+#
+# assert between_markers("What is >apple<", ">", "<") == "apple"
+# assert (
+#     between_markers("<head><title>My new site</title></head>", "<title>", "</title>")
+#     == "My new site"
+# )
+# assert between_markers("No[/b] hi", "[b]", "[/b]") == "No"
+# assert between_markers("No [b]hi", "[b]", "[/b]") == "hi"
+# assert between_markers("No hi", "[b]", "[/b]") == "No hi"
+# assert between_markers("No <hi>", ">", "<") == ""
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
