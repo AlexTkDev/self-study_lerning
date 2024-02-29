@@ -15,7 +15,6 @@
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
 import itertools
 
-
 # def is_even(num: int) -> bool:
 #     # your code here
 #     return num & 1 == 0
@@ -784,4 +783,73 @@ import itertools
 # assert between_markers("No [b]hi", "[b]", "[/b]") == "hi"
 # assert between_markers("No hi", "[b]", "[/b]") == "No hi"
 # assert between_markers("No <hi>", ">", "<") == ""
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# def missing_number(items: list[int]) -> int:
+#     sorted_items = sorted(items)
+#     step = sorted_items[1] - sorted_items[0]
+#     a = [(i + step) for i in range(len(sorted_items)+1)]
+#     for i in a:
+#         if i not in items:
+#             return i
+#
+#
+#
+# print("Example:")
+# print(missing_number([2, 6, 8]))
+#
+# # These "asserts" are used for self-checking
+# assert missing_number([1, 4, 2, 5]) == 3
+# assert missing_number([2, 6, 8]) == 4
+# assert missing_number([5, 25, 30, 20, 15]) == 10
+#
+# # print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# from collections import namedtuple
+#
+# Pawn = namedtuple('Pawn', "column row")
+#
+#
+# def safe_pawns(pawns: set) -> int:
+#     def is_safe(pawn, board):
+#         return (Pawn(pawn.column - 1, pawn.row - 1) in board
+#                 or Pawn(pawn.column + 1, pawn.row - 1) in board)
+#
+#     board = {Pawn(ord(column), ord(row)) for column, row in pawns}
+#     return sum(1 for pawn in board if is_safe(pawn, board))
+#
+#
+# print("Example:")
+# print(safe_pawns({"b4", "d4", "f4", "c3", "e3", "g5", "d2"}))
+#
+# assert safe_pawns({"f4", "d4", "e3", "b4", "g5", "d2", "c3"}) == 6
+# assert safe_pawns({"f4", "c4", "b4", "e4", "g4", "d4", "e5"}) == 1
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# def safe_pawns(pawns):
+#     pawn_indexes = list()  # Координаты, данные в задаче, планируем хранить в списке
+#     for i in pawns:  # Пробегаю по списку, перевожу координаты шахмат в цифровые значения
+#         rows = int(i[1]) - 1
+#         colums = (ord(i[0]) - 97)
+#         pawn_indexes.append((colums, rows))
+#
+#     count = 0  # Создаю счетчик, где будет хранится кол-во найденных "диагоналей"
+#     for j in pawn_indexes:
+#         if pawn_indexes.count((j[0] - 1, j[1] - 1)) != 0:
+#             count = count + (pawn_indexes.count((j[0] - 1, j[1] - 1)))
+#         else:
+#             count = count + (pawn_indexes.count((j[0] + 1, j[1] - 1)))
+#     return count
+#
+#
+# print("Example:")
+# print(safe_pawns({"b4", "d4", "f4", "c3", "e3", "g5", "d2"}))
+#
+# assert safe_pawns({"f4", "d4", "e3", "b4", "g5", "d2", "c3"}) == 6
+# assert safe_pawns({"f4", "c4", "b4", "e4", "g4", "d4", "e5"}) == 1
+#
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
