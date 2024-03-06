@@ -13,7 +13,6 @@
 # assert first_word("hi") == "hi"
 #
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
-import itertools
 
 # def is_even(num: int) -> bool:
 #     # your code here
@@ -880,4 +879,279 @@ import itertools
 #
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
 
+#
+# from typing import Union
+# from datetime import datetime
+#
+#
+# def sun_angle(time: str) -> Union[float, str]:
+#     # dt = datetime.strptime(time, "%H:%M")
+#     # up_sun = 6 * 60
+#     # down_sun = 18 * 60
+#     # minute_time = dt.time().hour * 60 + dt.time().minute
+#     # if minute_time in range(up_sun, down_sun + 1):
+#     #     return 180 * (minute_time - up_sun) / (down_sun - up_sun)
+#     # else:
+#     #     return f"I don't see the sun!"
+#
+#     try:
+#         hour, minute = map(int, time.split(":"))
+#         minute_time = hour * 60 + minute
+#         if 6 * 60 <= minute_time <= 18 * 60:
+#             return 180 * (minute_time - 6 * 60) / (18 * 60 - 6 * 60)
+#         else:
+#             raise ValueError("I don't see the sun!")
+#     except ValueError as e:
+#         return str(e)
+#
+#
+# print(sun_angle("07:00"))
+# assert sun_angle("07:00") == 15
+# assert sun_angle("12:15") == 93.75
+# assert sun_angle('18:01') == "I don't see the sun!"
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
 
+
+# from typing import Any, Iterable
+# from math import ceil
+#
+#
+# def split_list(items: list[Any]) -> Iterable[list[Any]]:
+#     # res = []
+#     # first_part = ceil((len(items) / 2))
+#     # a = items[:first_part]
+#     # b = items[first_part:]
+#     # res.append(a)
+#     # res.append(b)
+#     # return res
+#
+#     #or
+#     middle = ceil((len(items) / 2))
+#     return [items[:middle], items[middle:]]
+#
+#
+#
+# print("Example:")
+# print(list(split_list([1, 2, 3, 4, 5, 6])))
+#
+# assert list(split_list([1, 2, 3, 4, 5, 6])) == [[1, 2, 3], [4, 5, 6]]
+# assert list(split_list([1, 2, 3])) == [[1, 2], [3]]
+# assert list(split_list(["banana", "apple", "orange", "cherry", "watermelon"])) == [
+#     ["banana", "apple", "orange"],
+#     ["cherry", "watermelon"],
+# ]
+# assert list(split_list([1])) == [[1], []]
+# assert list(split_list([])) == [[], []]
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+# import time as my_time
+#
+#
+# def date_time(time: str) -> str:
+#     time_parse = my_time.strptime(time, '%d.%m.%Y %H:%M')
+#
+#     day = time_parse.tm_mday
+#     month = my_time.strftime("%B", time_parse)
+#     year = time_parse.tm_year
+#     hour = time_parse.tm_hour
+#     minute = time_parse.tm_min
+#
+#     minute_str = "minute" if minute == 1 else "minutes"
+#     hour_str = "hour" if hour == 1 else "hours"
+#
+#     return f"{day} {month} {year} year {hour} {hour_str} {minute} {minute_str}"
+#
+#
+# print("Example:")
+# print(date_time("11.04.1812 01:01"))
+#
+# assert date_time("01.01.2000 00:00") == "1 January 2000 year 0 hours 0 minutes"
+# assert date_time("09.05.1945 06:07") == "9 May 1945 year 6 hours 7 minutes"
+# assert date_time('09.07.1995 16:01') == '9 July 1995 year 16 hours 1 minute'
+# assert date_time('11.04.1812 01:01') == '11 April 1812 year 1 hour 1 minute'
+# assert date_time('11.04.1812 01:01') == '11 April 1812 year 1 hour 1 minute'
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# from time import strptime, strftime
+#
+#
+# def date_time(time_str: str) -> str:
+#     time_parse = strptime(time_str, '%d.%m.%Y %H:%M')
+#
+#     day, month, year, hour, minute = (time_parse.tm_mday,
+#                                       strftime("%B", time_parse),
+#                                       time_parse.tm_year,
+#                                       time_parse.tm_hour,
+#                                       time_parse.tm_min)
+#
+#     minute_str = "minute" if minute == 1 else "minutes"
+#     hour_str = "hour" if hour == 1 else "hours"
+#
+#     return f"{day} {month} {year} year {hour} {hour_str} {minute} {minute_str}"
+#
+#
+# print("Example:")
+# print(date_time("11.04.1812 01:01"))
+#
+# assert date_time("01.01.2000 00:00") == "1 January 2000 year 0 hours 0 minutes"
+# assert date_time("09.05.1945 06:07") == "9 May 1945 year 6 hours 7 minutes"
+# assert date_time('09.07.1995 16:01') == '9 July 1995 year 16 hours 1 minute'
+# assert date_time('11.04.1812 01:01') == '11 April 1812 year 1 hour 1 minute'
+# assert date_time('11.04.1812 01:01') == '11 April 1812 year 1 hour 1 minute'
+
+
+# MORSE = {
+#     ".-": "a",
+#     "-...": "b",
+#     "-.-.": "c",
+#     "-..": "d",
+#     ".": "e",
+#     "..-.": "f",
+#     "--.": "g",
+#     "....": "h",
+#     "..": "i",
+#     ".---": "j",
+#     "-.-": "k",
+#     ".-..": "l",
+#     "--": "m",
+#     "-.": "n",
+#     "---": "o",
+#     ".--.": "p",
+#     "--.-": "q",
+#     ".-.": "r",
+#     "...": "s",
+#     "-": "t",
+#     "..-": "u",
+#     "...-": "v",
+#     ".--": "w",
+#     "-..-": "x",
+#     "-.--": "y",
+#     "--..": "z",
+#     "-----": "0",
+#     ".----": "1",
+#     "..---": "2",
+#     "...--": "3",
+#     "....-": "4",
+#     ".....": "5",
+#     "-....": "6",
+#     "--...": "7",
+#     "---..": "8",
+#     "----.": "9",
+# }
+#
+
+# def morse_decoder(code: str) -> str:
+#     # res = []
+#     # words = code.split("   ")
+#     # for word in words:
+#     #     letters = word.split()
+#     #     decoded = ""
+#     #     for letter in letters:
+#     #         decoded += MORSE[letter]
+#     #     res.append(decoded)
+#     # return " ".join(res).capitalize()
+#
+#     # or
+#     decoded_words = ["".join(MORSE[letter] for letter in word.split()) for word in code.split("   ")]
+#     return " ".join(decoded_words).capitalize()
+#
+#
+# print("Example:")
+# print(morse_decoder("... --- -- .   - . -..- -"))
+#
+# # These "asserts" are used for self-checking
+# assert morse_decoder("... --- -- .   - . -..- -") == "Some text"
+# assert (
+#     morse_decoder("..   .-- .- ...   -... --- .-. -.   .. -.   .---- ----. ----. -----")
+#     == "I was born in 1990"
+# )
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# # from typing import Iterable
+# # def replace_last(line: list) -> Iterable:
+# #     if len(line) == 0:
+# #         return []
+# #
+# #     last_el = line.pop()
+# #     line.insert(0, last_el)
+# #     return line
+#
+# # or
+# from collections import deque
+# from typing import Iterable
+#
+#
+# def replace_last(line: list) -> Iterable:
+#     if not line:
+#         return []
+#
+#     dq = deque(line)
+#     dq.rotate(1)
+#     return list(dq)
+#
+#
+# print("Example:")
+# print(list(replace_last([2, 3, 4, 1])))
+#
+# assert list(replace_last([2, 3, 4, 1])) == [1, 2, 3, 4]
+# assert list(replace_last([1, 2, 3, 4])) == [4, 1, 2, 3]
+# assert list(replace_last([1])) == [1]
+# assert list(replace_last([])) == []
+#
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# def index_power(ar: list[int], n: int) -> int:
+#     # if n > len(ar) - 1:
+#     #     return -1
+#     # return ar[n]**n
+#
+#     # or
+#     try:
+#         return ar[n] ** n
+#     except IndexError:
+#         return -1
+#
+#
+# print("Example:")
+# print(index_power([1, 2, 3], 2))
+#
+# # These "asserts" are used for self-checking
+# assert index_power([1, 2, 3, 4], 2) == 9
+# assert index_power([1, 3, 10, 100], 3) == 1000000
+# assert index_power([0, 1], 0) == 1
+# assert index_power([1, 2], 3) == -1
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+from collections import Counter
+
+
+# def is_majority(items: list[bool]) -> bool:
+#     if not items:
+#         return False
+#     return items.count(True) > len(items) / 2
+#
+#
+#
+#
+# print("Example:")
+# print(is_majority([True, True, False, False]))
+#
+# # These "asserts" are used for self-checking
+# assert is_majority([True, True, False, True, False]) == True
+# assert is_majority([True, True, False]) == True
+# assert is_majority([True, True, False, False]) == False
+# assert is_majority([True, True, False, False, False]) == False
+# assert is_majority([False]) == False
+# assert is_majority([True]) == True
+# assert is_majority([]) == False
+# assert is_majority([False, False, True]) == False
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
