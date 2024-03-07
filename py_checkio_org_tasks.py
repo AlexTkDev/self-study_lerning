@@ -1155,3 +1155,76 @@ from collections import Counter
 # assert is_majority([False, False, True]) == False
 #
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# def checkio(values: list) -> list:
+#     return sorted(values, key=abs)
+#
+#
+# print("Example:")
+# print(checkio([-20, -5, 10, 15]))
+#
+# # These "asserts" are used for self-checking
+# assert checkio([-20, -5, 10, 15]) == [-5, 10, 15, -20]
+# assert checkio([1, 2, 3, 0]) == [0, 1, 2, 3]
+# assert checkio([-1, -2, -3, 0]) == [0, -1, -2, -3]
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# def count_vowels(text: str) -> int:
+#     # count = 0
+#     # for letter in text.lower():
+#     #     if letter in ("a", "e", "i", "o", "u"):
+#     #         count += 1
+#     # return count
+#
+#     vowels = {'a', 'e', 'i', 'o', 'u'}
+#     return sum(text.lower().count(vowel) for vowel in vowels)
+#
+#
+#
+# print("Example:")
+# print(count_vowels("Hello"))
+#
+# # These "asserts" are used for self-checking
+# assert count_vowels("hello") == 2
+# assert count_vowels("openai") == 4
+# assert count_vowels("typescript") == 2
+# assert count_vowels("a") == 1
+# assert count_vowels("b") == 0
+# assert count_vowels("aeiou") == 5
+# assert count_vowels("AEIOU") == 5
+# assert count_vowels("The quick brown fox") == 5
+# assert count_vowels("Jumps over the lazy dog") == 6
+# assert count_vowels("") == 0
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# def to_title_case(sentence: str) -> str:
+#     return sentence.title()
+#
+#
+# print("Example:")
+# print(to_title_case("hello world"))
+#
+# # These "asserts" are used for self-checking
+# assert to_title_case("hello world") == "Hello World"
+# assert to_title_case("openai gpt-4") == "Openai Gpt-4"
+# assert to_title_case("this is a title") == "This Is A Title"
+# assert to_title_case("THE QUICK BROWN FOX") == "The Quick Brown Fox"
+# assert to_title_case("JUMPs ovER a LAZy dog") == "Jumps Over A Lazy Dog"
+# assert to_title_case("typescript is great") == "Typescript Is Great"
+# assert to_title_case("the answer is 42") == "The Answer Is 42"
+# assert to_title_case("to be or not to be") == "To Be Or Not To Be"
+# assert to_title_case("that is the question") == "That Is The Question"
+# assert to_title_case("") == ""
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+
+
+
+
