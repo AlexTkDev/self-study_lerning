@@ -27,10 +27,7 @@
 # print(convert_num(num))
 
 # random generate
-
 import random
-import string
-
 alphanum = "0123456789!@#$%^&*ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 length = 12
 
