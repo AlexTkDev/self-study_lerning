@@ -13,7 +13,7 @@
 # assert first_word("hi") == "hi"
 #
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
-
+import statistics
 # def is_even(num: int) -> bool:
 #     # your code here
 #     return num & 1 == 0
@@ -1132,7 +1132,6 @@
 
 from collections import Counter
 
-
 # def is_majority(items: list[bool]) -> bool:
 #     if not items:
 #         return False
@@ -1224,7 +1223,290 @@ from collections import Counter
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
 
 
+# from datetime import datetime
+# from typing import List
+#
+#
+# def sum_light(els: List[datetime]) -> int:
+#     """
+#     how long the light bulb has been turned on
+#     """
+#     total_light = 0
+#     for i in range(0, len(els), 2):
+#         total_light += (els[i + 1] - els[i]).total_seconds()
+#     return int(total_light)
+#
+#
+# if __name__ == "__main__":
+#     print("Example:")
+#     print(
+#         sum_light(
+#             [
+#                 datetime(2015, 1, 12, 10, 0, 0),
+#                 datetime(2015, 1, 12, 10, 10, 10),
+#                 datetime(2015, 1, 12, 11, 0, 0),
+#                 datetime(2015, 1, 12, 11, 10, 10),
+#             ]
+#         )
+#     )
+#
+#     # These "asserts" are used for self-checking and not for an auto-testing
+#     assert (
+#             sum_light(
+#                 els=[
+#                     datetime(2015, 1, 12, 10, 0, 0),
+#                     datetime(2015, 1, 12, 10, 10, 10),
+#                 ]
+#             )
+#             == 610
+#     )
+#
+#     assert (
+#             sum_light(
+#                 [
+#                     datetime(2015, 1, 12, 10, 0, 0),
+#                     datetime(2015, 1, 12, 10, 10, 10),
+#                     datetime(2015, 1, 12, 11, 0, 0),
+#                     datetime(2015, 1, 12, 11, 10, 10),
+#                 ]
+#             )
+#             == 1220
+#     )
+#
+#     assert (
+#             sum_light(
+#                 [
+#                     datetime(2015, 1, 12, 10, 0, 0),
+#                     datetime(2015, 1, 12, 10, 10, 10),
+#                     datetime(2015, 1, 12, 11, 0, 0),
+#                     datetime(2015, 1, 12, 11, 10, 10),
+#                     datetime(2015, 1, 12, 11, 10, 10),
+#                     datetime(2015, 1, 12, 12, 10, 10),
+#                 ]
+#             )
+#             == 4820
+#     )
+#
+#     assert (
+#             sum_light(
+#                 [
+#                     datetime(2015, 1, 12, 10, 0, 0),
+#                     datetime(2015, 1, 12, 10, 0, 1),
+#                 ]
+#             )
+#             == 1
+#     )
+#
+#     assert (
+#             sum_light(
+#                 [
+#                     datetime(2015, 1, 12, 10, 0, 0),
+#                     datetime(2015, 1, 12, 10, 0, 10),
+#                     datetime(2015, 1, 12, 11, 0, 0),
+#                     datetime(2015, 1, 13, 11, 0, 0),
+#                 ]
+#             )
+#             == 86410
+#     )
+#
+#     print(
+#         "The first mission in series is completed? Click 'Check' to earn cool rewards!"
+#     )
+
+
+# from collections.abc import Iterable
+#
+#
+# def remove_all_after(items: list[int], border: int) -> Iterable[int]:
+#     # try:
+#     #     if len(items) == 0: return []
+#     #     if items.index(border) == ValueError: raise ValueError
+#     # except ValueError:
+#     #     return items
+#     #
+#     # return items[:items.index(border) + 1]
+#
+#     # or
+#     if not items:
+#         return []
+#
+#     try:
+#         index = items.index(border)
+#     except ValueError:
+#         return items
+#
+#     return items[:index + 1]
+#
+#
+# print("Example:")
+# print(list(remove_all_after([1, 2, 3, 4, 5], 3)))
+#
+# # These "asserts" are used for self-checking
+# assert list(remove_all_after([1, 2, 3, 4, 5], 3)) == [1, 2, 3]
+# assert list(remove_all_after([1, 1, 2, 2, 3, 3], 2)) == [1, 1, 2]
+# assert list(remove_all_after([1, 1, 2, 4, 2, 3, 4], 2)) == [1, 1, 2]
+# assert list(remove_all_after([1, 1, 5, 6, 7], 2)) == [1, 1, 5, 6, 7]
+# assert list(remove_all_after([], 0)) == []
+# assert list(remove_all_after([7, 7, 7, 7, 7, 7, 7, 7, 7], 7)) == [7]
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# Taken from mission Lightbulb Intro
+
+# from datetime import datetime
+# from typing import List, Optional
+#
+#
+# def sum_light(els: List[datetime], start_watching: Optional[datetime] = None) -> int:
+#     """
+#     how long the light bulb has been turned on
+#     """
+#     total_light = 0
+#
+#     for i in range(0, len(els), 2):
+#         light_on_time = (els[i + 1] - els[i]).total_seconds()
+#
+#         if start_watching:
+#             if start_watching >= els[i + 1]:
+#                 continue
+#             elif start_watching > els[i]:
+#                 light_on_time -= (start_watching - els[i]).total_seconds()
+#
+#         total_light += max(light_on_time, 0)
+#
+#     return int(total_light)
+#
+#
+# if __name__ == "__main__":
+#     print("Example:")
+#     print(
+#         sum_light(
+#             [
+#                 datetime(2015, 1, 12, 10, 0, 0),
+#                 datetime(2015, 1, 12, 10, 0, 10),
+#             ],
+#             datetime(2015, 1, 12, 10, 0, 5),
+#         )
+#     )
+#
+#     assert (
+#         sum_light(
+#             els=[
+#                 datetime(2015, 1, 12, 10, 0, 0),
+#                 datetime(2015, 1, 12, 10, 0, 10),
+#             ],
+#             start_watching=datetime(2015, 1, 12, 10, 0, 5),
+#         )
+#         == 5
+#     )
+#
+#     assert (
+#         sum_light(
+#             [
+#                 datetime(2015, 1, 12, 10, 0, 0),
+#                 datetime(2015, 1, 12, 10, 0, 10),
+#             ],
+#             datetime(2015, 1, 12, 10, 0, 0),
+#         )
+#         == 10
+#     )
+#
+#     assert (
+#         sum_light(
+#             [
+#                 datetime(2015, 1, 12, 10, 0, 0),
+#                 datetime(2015, 1, 12, 10, 10, 10),
+#                 datetime(2015, 1, 12, 11, 0, 0),
+#                 datetime(2015, 1, 12, 11, 10, 10),
+#             ],
+#             datetime(2015, 1, 12, 11, 0, 0),
+#         )
+#         == 610
+#     )
+#
+#     assert (
+#         sum_light(
+#             [
+#                 datetime(2015, 1, 12, 10, 0, 0),
+#                 datetime(2015, 1, 12, 10, 10, 10),
+#                 datetime(2015, 1, 12, 11, 0, 0),
+#                 datetime(2015, 1, 12, 11, 10, 10),
+#             ],
+#             datetime(2015, 1, 12, 11, 0, 10),
+#         )
+#         == 600
+#     )
+#
+#     assert (
+#         sum_light(
+#             [
+#                 datetime(2015, 1, 12, 10, 0, 0),
+#                 datetime(2015, 1, 12, 10, 10, 10),
+#                 datetime(2015, 1, 12, 11, 0, 0),
+#                 datetime(2015, 1, 12, 11, 10, 10),
+#             ],
+#             datetime(2015, 1, 12, 10, 10, 0),
+#         )
+#         == 620
+#     )
+#
+#     assert (
+#         sum_light(
+#             [
+#                 datetime(2015, 1, 12, 10, 0, 0),
+#                 datetime(2015, 1, 12, 10, 10, 10),
+#                 datetime(2015, 1, 12, 11, 0, 0),
+#                 datetime(2015, 1, 12, 11, 10, 10),
+#                 datetime(2015, 1, 12, 11, 10, 11),
+#                 datetime(2015, 1, 12, 12, 10, 11),
+#             ],
+#             datetime(2015, 1, 12, 12, 10, 11),
+#         )
+#         == 0
+#     )
+#
+#     assert (
+#         sum_light(
+#             [
+#                 datetime(2015, 1, 12, 10, 0, 0),
+#                 datetime(2015, 1, 12, 10, 10, 10),
+#                 datetime(2015, 1, 12, 11, 0, 0),
+#                 datetime(2015, 1, 12, 11, 10, 10),
+#                 datetime(2015, 1, 12, 11, 10, 11),
+#                 datetime(2015, 1, 12, 12, 10, 11),
+#             ],
+#             datetime(2015, 1, 12, 12, 9, 11),
+#         )
+#         == 60
+#     )
+#
+#     print("The second mission in series is done? Click 'Check' to earn cool rewards!")
 
 
 
 
+
+# import statistics
+#
+#
+# def median(data: list[int]) -> int | float:
+#     return statistics.median(data)
+#
+#
+# print("Example:")
+# print(median([3, 6, 20, 99, 10, 15]))
+#
+# # These "asserts" are used for self-checking
+# assert median([1, 2, 3, 4, 5]) == 3
+# assert median([3, 1, 2, 5, 3]) == 3
+# assert median([1, 300, 2, 200, 1]) == 2
+# assert median([3, 6, 20, 99, 10, 15]) == 12.5
+# assert median([10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]) == 5
+# assert median([0, 7, 1, 8, 4, 9, 5, 6, 2, 3]) == 4.5
+# assert median([33, 56, 62]) == 56
+# assert median([21, 56, 84, 82, 52, 9]) == 54
+# assert median([100, 1, 1, 1, 1, 1, 1]) == 1
+# assert median([64, 6, 92, 7, 70, 5]) == 35.5
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
