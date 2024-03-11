@@ -1711,3 +1711,31 @@ from collections import Counter
 # assert list(except_zero([4, 5, 3, 1, 1])) == [1, 1, 3, 4, 5]
 # assert list(except_zero([0, 0])) == [0, 0]
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# from collections.abc import Iterable
+# from collections import Counter
+#
+#
+# def frequency_sorting(numbers: list[int]) -> Iterable[int]:
+#     counts = Counter(numbers)
+#     return sorted(numbers, key=lambda x: (-counts[x], x))
+#
+#
+# print("Example:")
+# print(list(frequency_sorting([3, 4, 11, 13, 11, 4, 4, 7, 3])))
+#
+# # These "asserts" are used for self-checking
+# assert list(frequency_sorting([1, 2, 3, 4, 5])) == [1, 2, 3, 4, 5]
+# assert list(frequency_sorting([3, 4, 11, 13, 11, 4, 4, 7, 3])) == [
+#     4,
+#     4,
+#     4,
+#     3,
+#     3,
+#     11,
+#     11,
+#     7,
+#     13,
+# ]
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
