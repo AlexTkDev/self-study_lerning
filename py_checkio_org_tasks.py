@@ -13,6 +13,7 @@
 # assert first_word("hi") == "hi"
 #
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
+import re
 import statistics
 # def is_even(num: int) -> bool:
 #     # your code here
@@ -1132,6 +1133,7 @@ import statistics
 
 from collections import Counter
 
+
 # def is_majority(items: list[bool]) -> bool:
 #     if not items:
 #         return False
@@ -1484,9 +1486,6 @@ from collections import Counter
 #     print("The second mission in series is done? Click 'Check' to earn cool rewards!")
 
 
-
-
-
 # import statistics
 #
 #
@@ -1509,4 +1508,206 @@ from collections import Counter
 # assert median([100, 1, 1, 1, 1, 1, 1]) == 1
 # assert median([64, 6, 92, 7, 70, 5]) == 35.5
 #
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# def correct_sentence(text: str) -> str:
+#     # if text.endswith("."):
+#     #     return text.capitalize()
+#     # else:
+#     #     return text.capitalize() + "."
+#
+#     return (text[0].upper()+text[1:]) if text.endswith(".") else (text[0].upper()+text[1:] + ".")
+#
+#
+# print("Example:")
+# print(correct_sentence("welcome to New York"))
+#
+# # These "asserts" are used for self-checking
+# assert correct_sentence("greetings, friends") == "Greetings, friends."
+# assert correct_sentence("Greetings, friends") == "Greetings, friends."
+# assert correct_sentence("Greetings, friends.") == "Greetings, friends."
+# assert correct_sentence("greetings, friends.") == "Greetings, friends."
+# assert correct_sentence('welcome to New York') == 'Welcome to New York.'
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# def words_order(text: str, words: list) -> bool:
+#     # if len(words) != len(set(words)):
+#     #     return False
+#     # words_in_text = text.split()
+#     # indices = []
+#     # for word in words:
+#     #     if word not in words_in_text:
+#     #         return False
+#     #     indices.append(words_in_text.index(word))
+#     # return indices == sorted(indices)
+#
+#     # or
+#     # Проверка наличия повторяющихся слов в списке
+#     if len(words) != len(set(words)):
+#         return False
+#     words_in_text = text.split()
+#     # Проверяем, что все слова из words присутствуют в words_in_text
+#     if not all(word in words_in_text for word in words):
+#         return False
+#     # Получаем индексы слов в тексте
+#     indices = [words_in_text.index(word) for word in words]
+#     return indices == sorted(indices)
+#
+#
+# print("Example:")
+# print(words_order("hi world im here", ["world", "here"]))
+#
+# # These "asserts" are used for self-checking
+# assert words_order("hi world im here", ["world", "here"]) == True
+# assert words_order("hi world im here", ["here", "world"]) == False
+# assert words_order("hi world im here", ["world"]) == True
+# assert words_order("hi world im here", ["world", "here", "hi"]) == False
+# assert words_order("hi world im here", ["world", "im", "here"]) == True
+# assert words_order("hi world im here", ["world", "hi", "here"]) == False
+# assert words_order("hi world im here", ["world", "world"]) == False
+# assert words_order("hi world im here", ["country", "world"]) == False
+# assert words_order("hi world im here", ["wo", "rld"]) == False
+# assert words_order("", ["world", "here"]) == False
+# assert words_order("hi world world im here", ["world", "world"]) == False
+# assert (
+#         words_order("hi world world im here hi world world im here", ["world", "here"])
+#         == True
+# )
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# def replace_all(mainText: str, target: str, repl: str) -> str:
+#     # your code here
+#     return mainText.replace(target, repl)
+#
+#
+# print("Example:")
+# print(replace_all("hello world", "world", "TypeScript"))
+#
+# # These "asserts" are used for self-checking
+# assert replace_all("hello world", "world", "TypeScript") == "hello TypeScript"
+# assert (
+#     replace_all("hello world world", "world", "TypeScript")
+#     == "hello TypeScript TypeScript"
+# )
+# assert replace_all("TypeScript is fun", "fun", "awesome") == "TypeScript is awesome"
+# assert replace_all("aaa", "a", "b") == "bbb"
+# assert replace_all("replace all the all", "all", "some") == "replace some the some"
+# assert replace_all("nothing to replace", "something", "nothing") == "nothing to replace"
+# assert replace_all("same same same", "same", "same") == "same same same"
+# assert replace_all("123 123", "123", "321") == "321 321"
+# assert replace_all("OpenAI", "AI", "Source") == "OpenSource"
+# assert replace_all("", "anything", "nothing") == ""
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+# from datetime import datetime
+# def time_converter(time: str) -> str:
+#     return datetime\
+#         .strptime(time, '%H:%M').strftime('%I:%M %p')\
+#         .lstrip('0').lower().replace('m', '.m.')
+
+# or
+# from time import strptime
+# from datetime import time
+#
+# time_converter = lambda t: (time(*strptime(t, '%H:%M')[3:5]).strftime('%I:%M %p')
+#                             .lstrip('0').lower().replace('m', '.m.'))
+#
+# if __name__ == '__main__':
+#     print("Example:")
+#     print(time_converter("12:30"))
+#
+#     assert time_converter("12:30") == "12:30 p.m."
+#     assert time_converter("09:00") == "9:00 a.m."
+#
+#     print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# def goes_after(word: str, first: str, second: str) -> bool:
+#     first_index, second_index = word.find(first), word.find(second)
+#     return first_index != -1 and second_index != -1 and second_index == first_index + 1
+#
+#
+# print("Example:")
+# print(goes_after('almaz', 'm', 'a'))
+#
+# # These "asserts" are used for self-checking
+# assert goes_after("world", "w", "o") == True
+# assert goes_after("world", "w", "r") == False
+# assert goes_after("world", "l", "o") == False
+# assert goes_after("panorama", "a", "n") == True
+# assert goes_after("list", "l", "o") == False
+# assert goes_after("", "l", "o") == False
+# assert goes_after("list", "l", "l") == False
+# assert goes_after("world", "d", "w") == False
+# assert goes_after("Almaz", "a", "l") == False
+# assert goes_after('transport', 'r', 't') == False
+# assert goes_after('almaz', 'm', 'a') == False
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# def sum_digits(num: int) -> int:
+#     my_num = str(num)
+#     if len(my_num) == 1:
+#         return int(num)
+#
+#     res = 0
+#     for i in my_num:
+#         res += int(i)
+#
+#     while res >= 10:
+#         res = sum(int(digit) for digit in str(res))
+#
+#     return res
+#
+#
+# print("Example:")
+# print(sum_digits(38))
+#
+# # These "asserts" are used for self-checking
+# assert sum_digits(38) == 2
+# assert sum_digits(0) == 0
+# assert sum_digits(10) == 1
+# assert sum_digits(132) == 6
+# assert sum_digits(232) == 7
+# assert sum_digits(811) == 1
+# assert sum_digits(702) == 9
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# from collections.abc import Iterable
+# from collections import deque
+#
+#
+# def except_zero(items: list[int]) -> Iterable[int]:
+#     # zero_positions = [index for index, value in enumerate(items) if value == 0]
+#     # sorted_items = sorted(item for item in items if item != 0)
+#     # for position in zero_positions:
+#     #     sorted_items.insert(position, 0)
+#     # return sorted_items
+#
+#     # or
+#     zero_positions = [index for index, value in enumerate(items) if value == 0]
+#     non_zero_sorted = sorted(filter(lambda x: x != 0, items))
+#     sorted_items = deque(non_zero_sorted)
+#     for position in zero_positions:
+#         sorted_items.insert(position, 0)
+#     return list(sorted_items)
+#
+#
+# print("Example:")
+# print(list(except_zero([5, 3, 0, 0, 4, 1, 4, 0, 7])))
+#
+# # These "asserts" are used for self-checking
+# assert list(except_zero([5, 3, 0, 0, 4, 1, 4, 0, 7])) == [1, 3, 0, 0, 4, 4, 5, 0, 7]
+# assert list(except_zero([0, 2, 3, 1, 0, 4, 5])) == [0, 1, 2, 3, 0, 4, 5]
+# assert list(except_zero([0, 0, 0, 1, 0])) == [0, 0, 0, 1, 0]
+# assert list(except_zero([4, 5, 3, 1, 1])) == [1, 1, 3, 4, 5]
+# assert list(except_zero([0, 0])) == [0, 0]
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
