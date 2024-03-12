@@ -1134,7 +1134,6 @@ import statistics
 
 from collections import Counter
 
-
 # def is_majority(items: list[bool]) -> bool:
 #     if not items:
 #         return False
