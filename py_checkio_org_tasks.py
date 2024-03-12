@@ -13,6 +13,7 @@
 # assert first_word("hi") == "hi"
 #
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
+import random
 import re
 import statistics
 # def is_even(num: int) -> bool:
@@ -1738,4 +1739,113 @@ from collections import Counter
 #     7,
 #     13,
 # ]
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+# from datetime import datetime
+#
+#
+# def time_converter(time):
+#     time = time.replace("a.m.", "AM").replace("p.m.", "PM")
+#     return datetime.strptime(time, "%I:%M %p").strftime("%H:%M")
+#
+#
+# if __name__ == "__main__":
+#     print("Example:")
+#     print(time_converter("12:30 p.m."))
+#
+#     # These "asserts" using only for self-checking and not necessary for auto-testing
+#     assert time_converter("12:30 p.m.") == "12:30"
+#     assert time_converter("9:00 a.m.") == "09:00"
+#     assert time_converter("11:15 p.m.") == "23:15"
+#     print("Coding complete? Click 'Check' to earn cool rewards!")
+
+
+# # def sum_by_types(items: list[str, int]) -> tuple[str, int] | list[str, int]:
+# #     if len(items) == 0:
+# #         return ["", 0]
+# #     first = ""
+# #     second = 0
+# #     for i in items:
+# #         if type(i) == int:
+# #             second += i
+# #         elif type(i) == str:
+# #             first += i
+# #     return [first, second]
+# # or
+# from typing import Union, List
+#
+#
+# def sum_by_types(items: List[Union[str, int]]) -> Union[tuple[str, int], list[str, int]]:
+#     string_sum = ''.join(str(item) for item in items if isinstance(item, str))
+#     int_sum = sum(item for item in items if isinstance(item, int))
+#     return [string_sum, int_sum] if string_sum else ("", int_sum)
+#
+#
+# print("Example:")
+# print(list(sum_by_types([1, 2, 3])))
+#
+# assert list(sum_by_types([])) == ["", 0]
+# assert list(sum_by_types([1, 2, 3])) == ["", 6]
+# assert list(sum_by_types(["1", 2, 3])) == ["1", 5]
+# assert list(sum_by_types(["1", "2", 3])) == ["12", 3]
+# assert list(sum_by_types(["1", "2", "3"])) == ["123", 0]
+# assert list(sum_by_types(["size", 12, "in", 45, 0])) == ["sizein", 57]
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# def longest_substr(s: str) -> int:
+#     char_set = set()
+#     max_length = 0
+#     left_ptr = 0
+#
+#     for right_ptr in range(len(s)):
+#         while s[right_ptr] in char_set:
+#             char_set.remove(s[left_ptr])
+#             left_ptr += 1
+#         char_set.add(s[right_ptr])
+#         max_length = max(max_length, right_ptr - left_ptr + 1)
+#
+#     return max_length
+#
+#
+# print("Example:")
+# print(longest_substr("pwwkew"))
+#
+# # These "asserts" are used for self-checking
+# assert longest_substr("abcabcbb") == 3
+# assert longest_substr("bbbbb") == 1
+# assert longest_substr("pwwkew") == 3
+# assert longest_substr("abcdef") == 6
+# assert longest_substr("") == 0
+# assert longest_substr("au") == 2
+# assert longest_substr("dvdf") == 3
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# def translation(text: str) -> str:
+#     vowels = "aeiouy"
+#     result = ""
+#     i = 0
+#     while i < len(text):
+#         if text[i] != ' ':
+#             result += text[i]
+#             if text[i] not in vowels:
+#                 i += 2
+#             else:
+#                 i += 3
+#         else:
+#             result += ' '
+#             i += 1
+#     return result.strip()
+#
+#
+# print("Example:")
+# print(translation("hoooowe yyyooouuu duoooiiine"))
+#
+# # These "asserts" are used for self-checking
+# assert translation("hieeelalaooo") == "hello"
+# assert translation("hoooowe yyyooouuu duoooiiine") == "how you doin"
+# assert translation("aaa bo cy da eee fe") == "a b c d e f"
+# assert translation("sooooso aaaaaaaaa") == "sos aaa"
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
