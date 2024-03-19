@@ -1848,3 +1848,53 @@ from collections import Counter
 # assert translation("aaa bo cy da eee fe") == "a b c d e f"
 # assert translation("sooooso aaaaaaaaa") == "sos aaa"
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+
+# def checkio(line1: str, line2: str) -> str:
+#     # list_1, list_2, res = line2.split(","), line1.split(","), []
+#     # for element in list_1:
+#     #     if element in list_2:
+#     #         res.append(element)
+#     # res = sorted(res)
+#     # return ",".join(res)
+#
+#     # or
+#     return ",".join(sorted(set(line1.split(",")).intersection(set(line2.split(",")))))
+#
+#
+# print("Example:")
+# print(checkio("one,two,three", "four,five,one,two,six,three"))
+#
+# # These "asserts" are used for self-checking
+# assert checkio("hello,world", "hello,earth") == "hello"
+# assert checkio("one,two,three", "four,five,six") == ""
+# assert checkio("one,two,three", "four,five,one,two,six,three") == "one,three,two"
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+import datetime as dt
+
+
+def get_latest(dt1str: str, dt2str: str) -> str:
+    dt_1 = dt.datetime.strptime(dt1str, "%Y-%m-%dT%H:%M:%S")
+    dt_2 = dt.datetime.strptime(dt2str, "%Y-%m-%dT%H:%M:%S")
+    return dt1str if dt_1 > dt_2 else dt2str if dt_1 == dt_2 else dt2str
+
+    # if dt_1 > dt_2:
+    #     return dt1str
+    # elif dt_1 == dt_2:
+    #     return dt2str
+    # else:
+    #     return dt2str
+
+
+print("Example:")
+print(get_latest("0001-01-01T01:01:01", "3000-11-16T13:27:02"))
+
+assert get_latest("2007-03-04T21:08:12", "2007-03-04T21:08:12") == "2007-03-04T21:08:12"
+assert get_latest("2027-09-01T01:03:10", "1997-04-15T11:18:14") == "2027-09-01T01:03:10"
+assert get_latest("0001-01-01T01:01:01", "3000-11-16T13:27:02") == "3000-11-16T13:27:02"
+
+print("The mission is done! Click 'Check Solution' to earn rewards!")
