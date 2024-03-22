@@ -1850,7 +1850,6 @@ from collections import Counter
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
 
 
-
 # def checkio(line1: str, line2: str) -> str:
 #     # list_1, list_2, res = line2.split(","), line1.split(","), []
 #     # for element in list_1:
@@ -1874,27 +1873,172 @@ from collections import Counter
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
 
 
-import datetime as dt
+# import datetime as dt
+#
+#
+# def get_latest(dt1str: str, dt2str: str) -> str:
+#     dt_1 = dt.datetime.strptime(dt1str, "%Y-%m-%dT%H:%M:%S")
+#     dt_2 = dt.datetime.strptime(dt2str, "%Y-%m-%dT%H:%M:%S")
+#     return dt1str if dt_1 > dt_2 else dt2str if dt_1 == dt_2 else dt2str
+#
+#     # if dt_1 > dt_2:
+#     #     return dt1str
+#     # elif dt_1 == dt_2:
+#     #     return dt2str
+#     # else:
+#     #     return dt2str
+#
+#
+# print("Example:")
+# print(get_latest("0001-01-01T01:01:01", "3000-11-16T13:27:02"))
+#
+# assert get_latest("2007-03-04T21:08:12", "2007-03-04T21:08:12") == "2007-03-04T21:08:12"
+# assert get_latest("2027-09-01T01:03:10", "1997-04-15T11:18:14") == "2027-09-01T01:03:10"
+# assert get_latest("0001-01-01T01:01:01", "3000-11-16T13:27:02") == "3000-11-16T13:27:02"
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
 
 
-def get_latest(dt1str: str, dt2str: str) -> str:
-    dt_1 = dt.datetime.strptime(dt1str, "%Y-%m-%dT%H:%M:%S")
-    dt_2 = dt.datetime.strptime(dt2str, "%Y-%m-%dT%H:%M:%S")
-    return dt1str if dt_1 > dt_2 else dt2str if dt_1 == dt_2 else dt2str
+# def count_occurrences(main_str: str, sub_str: str) -> int:
+#     l_main_str, l_sub_str = main_str.lower(), sub_str.lower()
+#     return sum(1 for i in range(len(l_main_str) - len(l_sub_str) + 1)
+#                if l_main_str[i:i+len(l_sub_str)] == l_sub_str)
+#
+#
+# print("Example:")
+# print(count_occurrences("hello world hello", "hello"))
+#
+# # These "asserts" are used for self-checking
+# assert count_occurrences("hello world hello", "hello") == 2
+# assert count_occurrences("Hello World hello", "hello") == 2
+# assert count_occurrences("hello", "world") == 0
+# assert count_occurrences("hello world hello world hello", "world") == 2
+# assert count_occurrences("HELLO", "hello") == 1
+# assert count_occurrences("appleappleapple", "appleapple") == 2
+# assert count_occurrences("HELLO WORLD", "WORLD") == 1
+# assert count_occurrences("hello world hello", "o w") == 1
+# assert count_occurrences("apple apple apple", "apple") == 3
+# assert count_occurrences("apple Apple apple", "apple") == 3
+# assert count_occurrences("apple", "APPLE") == 1
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
 
-    # if dt_1 > dt_2:
-    #     return dt1str
-    # elif dt_1 == dt_2:
-    #     return dt2str
-    # else:
-    #     return dt2str
+
+# # Буква «f» - указывает на то, что Вам нужно двигаться вперед, «b» - назад, «l» - влево, а «r» - вправо.
+# def follow(instructions: str) -> tuple[int, int] | list[int]:
+#     # res = [0, 0]
+#     # for instruction in instructions:
+#     #     match instruction:
+#     #         case "f":
+#     #             res[1] += 1
+#     #         case "b":
+#     #             res[1] -= 1
+#     #         case "l":
+#     #             res[0] -= 1
+#     #         case "r":
+#     #             res[0] += 1
+#     # return res
+#
+#     # or
+#     movements = {"f": (0, 1), "b": (0, -1), "l": (-1, 0), "r": (1, 0)}
+#     x, y = 0, 0
+#     for instruction in instructions:
+#         move = movements.get(instruction)
+#         if move:
+#             dx, dy = move
+#             x += dx
+#             y += dy
+#     return x, y
+#
+#
+# print("Example:")
+# print(list(follow("ffrff")))
+#
+# # These "asserts" are used for self-checking
+# assert list(follow("fflff")) == [-1, 4]
+# assert list(follow("ffrff")) == [1, 4]
+# assert list(follow("fblr")) == [0, 0]
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
 
 
-print("Example:")
-print(get_latest("0001-01-01T01:01:01", "3000-11-16T13:27:02"))
+# def check_pangram(text: str) -> bool:
+#     return not set("abcdefghijklmnopqrstuvwxyz").difference(set(text.lower()))
+#
+#
+# print("Example:")
+# print(check_pangram("The quick brown fox jumps over the lazy dog."))
+#
+# # These "asserts" are used for self-checking
+# assert check_pangram("The quick brown fox jumps over the lazy dog.") == True
+# assert check_pangram("ABCDEF") == False
+# assert check_pangram("abcdefghijklmnopqrstuvwxyz") == True
+# assert check_pangram("ABCDEFGHIJKLMNOPQRSTUVWXYZ") == True
+# assert check_pangram("abcdefghijklmnopqrstuvwxy") == False
+# assert (
+#         check_pangram("Bored? Craving a pub quiz fix? Why, just come to the Royal Oak!")
+#         == True
+# )
+# assert check_pangram("As quirky joke, chefs won't pay devil magic zebra tax.") == True
+# assert check_pangram("Six big devils from Japan quickly forgot how to walt.") == False
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
 
-assert get_latest("2007-03-04T21:08:12", "2007-03-04T21:08:12") == "2007-03-04T21:08:12"
-assert get_latest("2027-09-01T01:03:10", "1997-04-15T11:18:14") == "2027-09-01T01:03:10"
-assert get_latest("0001-01-01T01:01:01", "3000-11-16T13:27:02") == "3000-11-16T13:27:02"
 
-print("The mission is done! Click 'Check Solution' to earn rewards!")
+# def checkio(*args):
+#     return 0 if len(args) == 0 else max(args) - min(args)
+#
+#
+# # These "asserts" using only for self-checking and not necessary for auto-testing
+# if __name__ == '__main__':
+#     def almost_equal(checked, correct, significant_digits):
+#         precision = 0.1 ** significant_digits
+#         return correct - precision < checked < correct + precision
+#
+#
+#     print('Example:')
+#     print(checkio(1, 2, 3))
+#
+#     assert almost_equal(checkio(1, 2, 3), 2, 3), "3-1=2"
+#     assert almost_equal(checkio(5, -5), 10, 3), "5-(-5)=10"
+#     assert almost_equal(checkio(10.2, -2.2, 0, 1.1, 0.5), 12.4, 3), "10.2-(-2.2)=12.4"
+#     assert almost_equal(checkio(), 0, 3), "Empty"
+#     print("Coding complete? Click 'Check' to review your tests and earn cool rewards!")
+
+
+# import re
+#
+#
+# def find_quotes(a):
+#     return re.findall(r'"([^"]*)"', a)
+#
+#
+# if __name__ == '__main__':
+#     print("Example:")
+#     print(find_quotes('good morning mister "superman"'))
+#
+#     # These "asserts" are used for self-checking and not for an auto-testing
+#     assert find_quotes('"Greetings"') == ['Greetings']
+#     assert find_quotes('Hi') == []
+#     assert find_quotes('good morning mister "superman"') == ['superman']
+#     assert find_quotes('"this" doesn\'t make any "sense"') == ['this', 'sense']
+#     assert find_quotes('"Lorem Ipsum" is simply dummy text '
+#                        'of the printing and typesetting '
+#                        'industry. Lorem Ipsum has been the '
+#                        '"industry\'s standard dummy text '
+#                        'ever since the 1500s", when an '
+#                        'unknown printer took a galley of '
+#                        'type and scrambled it to make a type '
+#                        'specimen book. It has survived not '
+#                        'only five centuries, but also the '
+#                        'leap into electronic typesetting, '
+#                        'remaining essentially unchanged. "It '
+#                        'was popularised in the 1960s" with '
+#                        'the release of Letraset sheets '
+#                        'containing Lorem Ipsum passages, and '
+#                        'more recently with desktop '
+#                        'publishing software like Aldus '
+#                        'PageMaker including versions of '
+#                        'Lorem Ipsum.') == ['Lorem Ipsum',
+#                                            "industry's standard dummy text ever "
+#                                            'since the 1500s',
+#                                            'It was popularised in the 1960s']
+#     assert find_quotes('count empty quotes ""') == ['']
+#     print("Coding complete? Click 'Check' to earn cool rewards!")
