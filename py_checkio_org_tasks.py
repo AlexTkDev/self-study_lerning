@@ -2065,3 +2065,271 @@ from collections import Counter
 # assert beat_previous("77777777777777777777777") == [7, 77, 777, 7777, 77777, 777777]
 #
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+# from collections import Counter
+#
+#
+# def checkio(text: str) -> str:
+#     often_used = Counter(filter(str.isalpha, text.lower()))
+#     return max(often_used, key=lambda x: (often_used[x], -ord(x)))
+#
+#
+#
+# print("Example:")
+# print(checkio("Hello World!"))
+#
+# # These "asserts" are used for self-checking
+# assert checkio("Hello World!") == "l"
+# assert checkio("How do you do?") == "o"
+# assert checkio("One") == "e"
+# assert checkio("Oops!") == "o"
+# assert checkio("AAaooo!!!!") == "a"
+# assert checkio("abe") == "a"
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# def is_number(val: str) -> bool:
+#     return val.isdigit()
+#
+#
+# print("Example:")
+# print(is_number("34"))
+#
+# # These "asserts" are used for self-checking
+# assert is_number("34") == True
+# assert is_number("df") == False
+# assert is_number("") == False
+# assert is_number("a5") == False
+# assert is_number("ITS A NUMBER") == False
+# assert is_number("5a") == False
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# from typing import Iterable
+#
+#
+# def move_zeros(items: list[int]) -> Iterable[int]:
+#     items.sort(reverse=True, key=bool)
+#     return items
+#
+#
+# print("Example:")
+# print(list(move_zeros([0, 1, 0, 3, 12])))
+#
+# # These "asserts" are used for self-checking
+# assert list(move_zeros([0, 1, 0, 3, 12])) == [1, 3, 12, 0, 0]
+# assert list(move_zeros([0])) == [0]
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+# from itertools import groupby
+#
+#
+# def long_repeat(line: str) -> int:
+#     # if not line:
+#     #     return 0
+#     #
+#     # max_repeat = 1
+#     # current_repeat = 1
+#     #
+#     # for i in range(1, len(line)):
+#     #     if line[i] == line[i-1]:
+#     #         current_repeat += 1
+#     #         max_repeat = max(max_repeat, current_repeat)
+#     #     else:
+#     #         current_repeat = 1
+#     # return max_repeat
+#
+#     # or
+#     return max((sum(1 for _ in g) for _, g in groupby(line)), default=0)
+#
+#
+# print("Example:")
+# print(long_repeat("sdsffffse"))
+#
+# assert long_repeat("sdsffffse") == 4
+# assert long_repeat("ddvvrwwwrggg") == 3
+# assert long_repeat('') == 0
+# assert long_repeat('abababaab') == 2
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# from typing import List, Tuple
+#
+#
+# def is_intersecting(circle1, circle2):
+#     x1, y1, r1 = circle1
+#     x2, y2, r2 = circle2
+#     distance_squared = (x1 - x2) ** 2 + (y1 - y2) ** 2
+#     return (r1 + r2) ** 2 > distance_squared > (r2 - r1) ** 2
+#
+#
+# def dfs(node, graph, visited):
+#     visited.add(node)
+#     for neighbor, intersect in enumerate(graph[node]):
+#         if intersect and neighbor not in visited:
+#             dfs(neighbor, graph, visited)
+#
+#
+# def count_chains(circles: List[Tuple[int, int, int]]) -> int:
+#     n = len(circles)
+#     graph = [[0] * n for _ in range(n)]
+#
+#     for i in range(n):
+#         for j in range(i + 1, n):
+#             if is_intersecting(circles[i], circles[j]):
+#                 graph[i][j] = graph[j][i] = 1
+#
+#     visited = set()
+#     chains = 0
+#     for i in range(n):
+#         if i not in visited:
+#             dfs(i, graph, visited)
+#             chains += 1
+#
+#     return chains
+#
+# # # or1
+# # import networkx as nx
+# # from itertools import combinations
+# # from typing import List, Tuple
+# #
+# #
+# # def count_chains(circles: List[Tuple[int, int, int]]) -> int:
+# #     G = nx.Graph()
+# #     G.add_nodes_from(range(len(circles)))
+# #
+# #     for (i, circle1), (j, circle2) in combinations(enumerate(circles), 2):
+# #         x1, y1, r1 = circle1
+# #         x2, y2, r2 = circle2
+# #         distance_squared = (x1 - x2) ** 2 + (y1 - y2) ** 2
+# #         if (r1 + r2) ** 2 > distance_squared > (r2 - r1) ** 2:
+# #             G.add_edge(i, j)
+# #
+# #     return nx.number_connected_components(G)
+#
+# # # or2
+# # from typing import List, Tuple
+# # import math
+# #
+# #
+# # def count_chains(circles: List[Tuple[int, int, int]]) -> int:
+# #     def is_intersecting(circle1, circle2):
+# #         (x1, y1, r1), (x2, y2, r2) = circle1, circle2
+# #         distance = math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2)
+# #         return r1 + r2 > distance > abs(r1 - r2)
+# #
+# #     def dfs(node):
+# #         visited.add(node)
+# #         [dfs(neighbor) for neighbor, intersect in enumerate(graph[node]) if intersect and neighbor not in visited]
+# #
+# #     n = len(circles)
+# #     graph = [[0] * n for _ in range(n)]
+# #
+# #     for i, circle1 in enumerate(circles):
+# #         for j, circle2 in enumerate(circles[i + 1:], start=i + 1):
+# #             if is_intersecting(circle1, circle2):
+# #                 graph[i][j] = graph[j][i] = 1
+# #
+# #     visited = set()
+# #     chains = sum(1 for i in range(n) if i not in visited and not dfs(i))
+# #     return chains
+#
+#
+#
+# if __name__ == '__main__':
+#     print("Example:")
+#     print(count_chains([(1, 1, 1), (4, 2, 1), (4, 3, 1)]))
+#
+#     # These "asserts" are used for self-checking and not for an auto-testing
+#     assert count_chains([(1, 1, 1), (4, 2, 1), (4, 3, 1)]) == 2, 'basic'
+#     assert count_chains([(1, 1, 1), (2, 2, 1), (3, 3, 1)]) == 1, 'basic #2'
+#     assert count_chains([(2, 2, 2), (4, 2, 2), (3, 4, 2)]) == 1, 'trinity'
+#     assert count_chains([(2, 2, 1), (2, 2, 2)]) == 2, 'inclusion'
+#     assert count_chains([(1, 1, 1), (1, 3, 1), (3, 1, 1), (3, 3, 1)]) == 4, 'adjacent'
+#     assert count_chains([(0, 0, 1), (-1, 1, 1), (1, -1, 1), (-2, -2, 1)]) == 2, 'negative coordinates'
+#     assert count_chains([(1, 3, 1), (2, 2, 1), (4, 2, 1), (5, 3, 1), (3, 3, 1)]) == 1
+#     print("Coding complete? Click 'Check' to earn cool rewards!")
+
+
+
+# from pathlib import Path
+# import os
+#
+#
+# def sort_by_ext(files: list[str]) -> list[str]:
+#     # def key_function(file):
+#     #     parts = file.split('.')
+#     #     if len(parts) == 1 or (len(parts) == 2 and parts[0] == ''):
+#     #         return '', file
+#     #     elif len(parts) == 2:
+#     #         return parts[1], parts[0]
+#     #     else:
+#     #         return parts[-1], '.'.join(parts[:-1])
+#     #
+#     # return sorted(files, key=key_function)
+#
+#     # or1
+#     # def key_function(file):
+#     #     parts = file.split('.')
+#     #     base_name = parts.pop(0) if parts[0] == '' else parts[0]
+#     #     return parts[-1] if len(parts) > 1 else '', base_name
+#     #
+#     # return sorted(files, key=key_function)
+#
+#     # or2
+#     # def key_function(file):
+#     #     parts = file.split('.')
+#     #     base_name = parts.pop(0) if parts[0] == '' else parts[0]
+#     #     return parts[-1] if len(parts) > 1 else '', base_name
+#     #
+#     # return sorted(files, key=lambda file: key_function(Path(file).name)[0])
+#
+#     # or3
+#     def key_function(file):
+#         base_name, extension = os.path.splitext(file)
+#         return extension, base_name
+#
+#     return sorted(files, key=lambda file: key_function(file)[0])
+#
+#
+# print("Example:")
+# print(sort_by_ext(["1.cad", "1.bat", "1.aa"]))
+#
+# # These "asserts" are used for self-checking
+# assert sort_by_ext(["1.cad", "1.bat", "1.aa"]) == ["1.aa", "1.bat", "1.cad"]
+# assert sort_by_ext(["1.cad", "1.bat", "1.aa", "2.bat"]) == [
+#     "1.aa",
+#     "1.bat",
+#     "2.bat",
+#     "1.cad",
+# ]
+# assert sort_by_ext(["1.cad", "1.bat", "1.aa", ".bat"]) == [
+#     ".bat",
+#     "1.aa",
+#     "1.bat",
+#     "1.cad",
+# ]
+# assert sort_by_ext(["1.cad", "1.bat", ".aa", ".bat"]) == [
+#     ".aa",
+#     ".bat",
+#     "1.bat",
+#     "1.cad",
+# ]
+# assert sort_by_ext(["1.cad", "1.", "1.aa"]) == ["1.", "1.aa", "1.cad"]
+# assert sort_by_ext(["1.cad", "1.bat", "1.aa", "1.aa.doc"]) == [
+#     "1.aa",
+#     "1.bat",
+#     "1.cad",
+#     "1.aa.doc",
+# ]
+# assert sort_by_ext(["1.cad", "1.bat", "1.aa", ".aa.doc"]) == [
+#     "1.aa",
+#     "1.bat",
+#     "1.cad",
+#     ".aa.doc",
+# ]
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
