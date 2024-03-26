@@ -2333,3 +2333,23 @@ from collections import Counter
 # ]
 #
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+#
+# from math import prod
+#
+#
+# def checkio(number: int) -> int:
+#     return prod([int(num) for num in str(number) if num != "0"])
+#
+#
+# if __name__ == '__main__':
+#     print("Example:")
+#     print(checkio(123405))
+#
+#     # These "asserts" are used for self-checking
+#     assert checkio(123405) == 120
+#     assert checkio(999) == 729
+#     assert checkio(1000) == 1
+#     assert checkio(1111) == 1
+#
+#     print("The mission is done! Click 'Check Solution' to earn rewards!")
