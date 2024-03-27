@@ -2254,7 +2254,6 @@ from collections import Counter
 #     print("Coding complete? Click 'Check' to earn cool rewards!")
 
 
-
 # from pathlib import Path
 # import os
 #
@@ -2353,3 +2352,38 @@ from collections import Counter
 #     assert checkio(1111) == 1
 #
 #     print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+import re
+
+
+def is_number(val: str) -> bool:
+    # return bool(re.match(r'^[+-]?(\d+(\.\d*)?|\.\d+)([eE][+-]?\d+)?$',
+    #                      val.strip())) and 'e' not in val.lower()
+
+    # or
+    r = [i for i in val]
+    if (not val or any(c in ('+', '-') for c in r[1:])
+            or any(s.isalpha() for s in r[1:])
+            or (val.startswith(".") and len(val) == 1)):
+        return False
+    else:
+        return True
+
+
+print("Example:")
+print(is_number("1000"))
+
+# These "asserts" are used for self-checking
+assert is_number("34") == True
+assert is_number("df") == False
+assert is_number("") == False
+assert is_number("+10.0") == True
+assert is_number("1OOO") == False
+assert is_number("1.") == True
+assert is_number("+.l") == False
+assert is_number("++1+.2-") == False
+assert is_number("3e4") == False
+assert is_number('.') == False
+assert is_number('.1') == True
+print("The mission is done! Click 'Check Solution' to earn rewards!")
