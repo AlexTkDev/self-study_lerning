@@ -1134,6 +1134,7 @@ import statistics
 
 from collections import Counter
 
+
 # def is_majority(items: list[bool]) -> bool:
 #     if not items:
 #         return False
@@ -2354,36 +2355,58 @@ from collections import Counter
 #     print("The mission is done! Click 'Check Solution' to earn rewards!")
 
 
-import re
+# import re
+#
+#
+# def is_number(val: str) -> bool:
+#     # return bool(re.match(r'^[+-]?(\d+(\.\d*)?|\.\d+)([eE][+-]?\d+)?$',
+#     #                      val.strip())) and 'e' not in val.lower()
+#
+#     # or
+#     r = [i for i in val]
+#     if (not val or any(c in ('+', '-') for c in r[1:])
+#             or any(s.isalpha() for s in r[1:])
+#             or (val.startswith(".") and len(val) == 1)):
+#         return False
+#     else:
+#         return True
+#
+#
+# print("Example:")
+# print(is_number("1000"))
+#
+# # These "asserts" are used for self-checking
+# assert is_number("34") == True
+# assert is_number("df") == False
+# assert is_number("") == False
+# assert is_number("+10.0") == True
+# assert is_number("1OOO") == False
+# assert is_number("1.") == True
+# assert is_number("+.l") == False
+# assert is_number("++1+.2-") == False
+# assert is_number("3e4") == False
+# assert is_number('.') == False
+# assert is_number('.1') == True
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
 
 
-def is_number(val: str) -> bool:
-    # return bool(re.match(r'^[+-]?(\d+(\.\d*)?|\.\d+)([eE][+-]?\d+)?$',
-    #                      val.strip())) and 'e' not in val.lower()
-
-    # or
-    r = [i for i in val]
-    if (not val or any(c in ('+', '-') for c in r[1:])
-            or any(s.isalpha() for s in r[1:])
-            or (val.startswith(".") and len(val) == 1)):
-        return False
-    else:
-        return True
-
-
-print("Example:")
-print(is_number("1000"))
-
-# These "asserts" are used for self-checking
-assert is_number("34") == True
-assert is_number("df") == False
-assert is_number("") == False
-assert is_number("+10.0") == True
-assert is_number("1OOO") == False
-assert is_number("1.") == True
-assert is_number("+.l") == False
-assert is_number("++1+.2-") == False
-assert is_number("3e4") == False
-assert is_number('.') == False
-assert is_number('.1') == True
-print("The mission is done! Click 'Check Solution' to earn rewards!")
+# def checkio(food: int) -> int:
+#     fed = 0
+#     new = 1
+#     while food >= fed + new:
+#         fed += new
+#         food -= fed
+#         new += 1
+#     return max(food, fed)
+#
+#
+# print("Example:")
+# print(checkio(18))
+#
+# # These "asserts" are used for self-checking
+# assert checkio(1) == 1
+# assert checkio(3) == 2
+# assert checkio(5) == 3
+# assert checkio(10) == 6
+# assert checkio(18) == 8
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
