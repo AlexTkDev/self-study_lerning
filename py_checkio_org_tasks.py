@@ -2499,3 +2499,39 @@ from collections import Counter
 # assert is_acceptable_password("abbcc12") == True
 # assert is_acceptable_password("aaaaaaabbaaaaaaaab") == False
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+
+def is_all_upper(text: str) -> bool:
+    return False if len(text.strip()) == 0 or text.isdigit() else text.isupper()
+
+
+print("Example:")
+print(is_all_upper("123 456"))
+
+# These "asserts" are used for self-checking
+assert is_all_upper("ALL UPPER") == True
+assert is_all_upper("all lower") == False
+assert is_all_upper("mixed UPPER and lower") == False
+assert is_all_upper("") == False
+assert is_all_upper('     ') == False
+assert is_all_upper('123') == False
+assert is_all_upper('123 456') == False
+
+print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
