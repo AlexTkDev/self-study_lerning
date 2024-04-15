@@ -16,6 +16,7 @@
 import random
 import re
 import statistics
+import string
 # def is_even(num: int) -> bool:
 #     # your code here
 #     return num & 1 == 0
@@ -2409,4 +2410,92 @@ from collections import Counter
 # assert checkio(5) == 3
 # assert checkio(10) == 6
 # assert checkio(18) == 8
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# import calendar
+#
+#
+# def checkio(year: int) -> int:
+#     return sum(calendar.weekday(year, m, 13) == 4 for m in range(1, 13))
+#
+#
+# if __name__ == "__main__":
+#     print("Example:")
+#     print(checkio(2015))
+#
+#     # These "asserts" using only for self-checking and not necessary for auto-testing
+#     assert checkio(2015) == 3, "First - 2015"
+#     assert checkio(1986) == 1, "Second - 1986"
+#     print("Coding complete? Click 'Check' to earn cool rewards!")
+
+
+# from typing import Iterable, Any
+# from collections import defaultdict
+#
+#
+# def remove_after_kth(items: list[Any], k: int) -> Iterable[Any]:
+#     # if k <= 0:
+#     #     return []
+#     #
+#     # count_map = {}
+#     # result = []
+#     #
+#     # for item in items:
+#     #     count_map[item] = count_map.get(item, 0) + 1
+#     #     if count_map[item] <= k:
+#     #         result.append(item)
+#     #
+#     # return result
+#
+#     # or
+#     count_map = defaultdict(int)
+#     return [item for item in items if
+#             count_map[item] < k and not (count_map.update({item: count_map[item] + 1}) or False)]
+#
+#
+# print("Example:")
+# print(list(remove_after_kth([1, 1, 1, 2, 2, 2], 5)))
+#
+# # These "asserts" are used for self-checking
+# assert list(remove_after_kth([42, 42, 42, 42, 42, 42, 42], 3)) == [42, 42, 42]
+# assert list(remove_after_kth([42, 42, 42, 99, 99, 17], 0)) == []
+# assert list(remove_after_kth([1, 1, 1, 2, 2, 2], 5)) == [1, 1, 1, 2, 2, 2]
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# def is_acceptable_password(password: str) -> bool:
+#     if len(set(password)) < 3:
+#         return False
+#     elif "password" in password.lower():
+#         return False
+#     elif len(password) >= 6 and any(letter.isdigit() for letter in password) and not password.isdigit():
+#         return True
+#     elif len(password) > 9:
+#         return True
+#     else:
+#         return False
+#
+#
+# print("Example:")
+# print(is_acceptable_password("aaaaaa1"))
+# # These "asserts" are used for self-checking
+# assert is_acceptable_password("short") == False
+# assert is_acceptable_password("short54") == True
+# assert is_acceptable_password("muchlonger") == True
+# assert is_acceptable_password("ashort") == False
+# assert is_acceptable_password("muchlonger5") == True
+# assert is_acceptable_password("sh5") == False
+# assert is_acceptable_password("1234567") == False
+# assert is_acceptable_password("12345678910") == True
+# assert is_acceptable_password("password12345") == False
+# assert is_acceptable_password("PASSWORD12345") == False
+# assert is_acceptable_password("pass1234word") == True
+# assert is_acceptable_password("aaaaaa1") == False
+# assert is_acceptable_password("aaaaaabbbbb") == False
+# assert is_acceptable_password("aaaaaabb1") == True
+# assert is_acceptable_password("abc1") == False
+# assert is_acceptable_password("abbcc12") == True
+# assert is_acceptable_password("aaaaaaabbaaaaaaaab") == False
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
