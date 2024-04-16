@@ -2501,37 +2501,152 @@ from collections import Counter
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
 
 
-
-def is_all_upper(text: str) -> bool:
-    return False if len(text.strip()) == 0 or text.isdigit() else text.isupper()
-
-
-print("Example:")
-print(is_all_upper("123 456"))
-
-# These "asserts" are used for self-checking
-assert is_all_upper("ALL UPPER") == True
-assert is_all_upper("all lower") == False
-assert is_all_upper("mixed UPPER and lower") == False
-assert is_all_upper("") == False
-assert is_all_upper('     ') == False
-assert is_all_upper('123') == False
-assert is_all_upper('123 456') == False
-
-print("The mission is done! Click 'Check Solution' to earn rewards!")
-
+# def is_all_upper(text: str) -> bool:
+#     return False if len(text.strip()) == 0 or text.isdigit() else text.isupper()
+#
+#
+# print("Example:")
+# print(is_all_upper("123 456"))
+#
+# # These "asserts" are used for self-checking
+# assert is_all_upper("ALL UPPER") == True
+# assert is_all_upper("all lower") == False
+# assert is_all_upper("mixed UPPER and lower") == False
+# assert is_all_upper("") == False
+# assert is_all_upper('     ') == False
+# assert is_all_upper('123') == False
+# assert is_all_upper('123 456') == False
+#
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
 
 
+# import re
+#
+#
+# def from_camel_case(name: str) -> str:
+#     name = re.sub('(.)([A-Z][a-z]+)', r'\1_\2', name)
+#     return re.sub('([a-z0-9])([A-Z])', r'\1_\2', name).lower()
+#
+#
+# print("Example:")
+# print(from_camel_case("IPhone"))
+# # These "asserts" are used for self-checking
+# assert from_camel_case("MyFunctionName") == "my_function_name"
+# assert from_camel_case("IPhone") == "i_phone"
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
 
 
+# class LovePython:
+#     def __init__(self):
+#         self.feelings = ["excitement", "inspiration", "amazement"]
+#         self.reasons = [
+#             "Python is a simple and understandable language that makes programming fascinating.",
+#             "A large number of libraries and frameworks make Python an ideal choice for various tasks.",
+#             "Readable Python syntax makes the code understandable and easily maintainable.",
+#             "Python has an extensive community ready to help and support in any matter.",
+#             "A multitude of opportunities for automating routine tasks make life easier and more exciting.",
+#             "The beautiful philosophy of Python, based on clarity and simplicity, aligns with my views on coding."
+#         ]
+#
+#     @classmethod
+#     def express_love(cls):
+#         print("Why I love Python:")
+#         for reason in cls().reasons:
+#             print("-", reason)
+#         print("Every time I write code in Python, I experience {}.".format(", ".join(cls().feelings)))
+#
+#
+# def i_love_python():
+#     """
+#     LovePython Class
+#
+# This class represents a declaration of love for the Python programming language. It encapsulates reasons why the author loves Python and expresses their feelings towards it.
+#
+# Attributes:
+# - feelings (list): A list of strings representing the feelings experienced when working with Python.
+# - reasons (list): A list of strings representing the reasons why the author loves Python.
+#
+# Methods:
+# - __init__(self): Constructor method initializes the LovePython object by setting up the feelings and reasons attributes.
+# - express_love(self): Method prints out the reasons why the author loves Python and expresses their feelings.
+#
+# Usage:
+# Instantiate an object of the LovePython class and call the express_love() method to see the reasons and feelings behind the author's love for Python.
+#
+# Example:
+#     my_love = LovePython()
+#     my_love.express_love()
+#
+# Output:
+#     Why I love Python:
+#     - Python is a simple and understandable language that makes programming fascinating.
+#     - A large number of libraries and frameworks make Python an ideal choice for various tasks.
+#     - Readable Python syntax makes the code understandable and easily maintainable.
+#     - Python has an extensive community ready to help and support in any matter.
+#     - A multitude of opportunities for automating routine tasks make life easier and more exciting.
+#     - The beautiful philosophy of Python, based on clarity and simplicity, aligns with my views on coding.
+#     Every time I write code in Python, I experience excitement, inspiration, and amazement.
+#
+# """
+#     return "I love Python!"
+#
+#
+# if __name__ == '__main__':
+#     my_love = LovePython()
+#     my_love.express_love()  # Added parentheses to call the method
+#     assert i_love_python() == "I love Python!"
+
+#
+# def fuzzy_string_match(str1: str, str2: str, threshold: int) -> bool:
+#     if abs(len(str1) - len(str2)) > threshold:
+#         return False
+#     differences = sum(1 for char1, char2 in zip(str1, str2) if char1 != char2)
+#     return differences <= threshold
+#
+#
+# print("Example:")
+# print(fuzzy_string_match("apple", "appel", 2))
+# # These "asserts" are used for self-checking
+# assert fuzzy_string_match("apple", "appel", 2) == True
+# assert fuzzy_string_match("apple", "bpple", 1) == True
+# assert fuzzy_string_match("apple", "bpple", 0) == False
+# assert fuzzy_string_match("apple", "apples", 1) == True
+# assert fuzzy_string_match("apple", "bpples", 2) == True
+# assert fuzzy_string_match("apple", "apxle", 1) == True
+# assert fuzzy_string_match("apple", "pxxli", 3) == False
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
 
 
+# def to_camel_case(name: str) -> str:
+#     name = name.replace('_', ' ')
+#     return ''.join(word.capitalize() for word in name.split())
+#
+#
+# print("Example:")
+# print(to_camel_case("my_function_name"))
+# # These "asserts" are used for self-checking
+# assert to_camel_case("my_function_name") == "MyFunctionName"
+# assert to_camel_case("i_phone") == "IPhone"
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
 
 
-
-
-
-
-
-
-
+# def caps_lock(text: str) -> str:
+#     caps_lock_on = False
+#     result = ""
+#     for char in text:
+#         if char == 'a':
+#             caps_lock_on = not caps_lock_on
+#         elif caps_lock_on and 'a' <= char <= 'z':
+#             result += char.upper()
+#         else:
+#             result += char
+#     return result
+#
+#
+# print("Example:")
+# print(caps_lock("Why are you asking me that?"))
+# # These "asserts" are used for self-checking
+# assert caps_lock("Why are you asking me that?") == "Why RE YOU sking me thT?"
+# assert caps_lock("Always wanted to visit Zambia.") == "AlwYS Wnted to visit ZMBI."
+# assert caps_lock("Aloha from Hawaii") == "Aloh FROM HwII"
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
