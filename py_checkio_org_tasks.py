@@ -1135,7 +1135,6 @@ import string
 
 from collections import Counter
 
-
 # def is_majority(items: list[bool]) -> bool:
 #     if not items:
 #         return False
@@ -2650,3 +2649,51 @@ from collections import Counter
 # assert caps_lock("Always wanted to visit Zambia.") == "AlwYS Wnted to visit ZMBI."
 # assert caps_lock("Aloha from Hawaii") == "Aloh FROM HwII"
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# from datetime import date, timedelta
+#
+#
+# def checkio(from_date, to_date):
+#     weekends = 0
+#
+#     while from_date <= to_date:
+#         if from_date.weekday() in [5, 6]:
+#             weekends += 1
+#         from_date = from_date + timedelta(days=1)
+#
+#     return weekends
+#
+#
+# if __name__ == "__main__":
+#     assert checkio(date(2013, 9, 18), date(2013, 9, 23)) == 2, "1st example"
+#     assert checkio(date(2013, 1, 1), date(2013, 2, 1)) == 8, "2nd example"
+#     assert checkio(date(2013, 2, 2), date(2013, 2, 3)) == 2, "3rd example"
+
+
+# from datetime import timedelta, datetime
+#
+#
+# def vacation(date, days):
+#     # parse_date = datetime.strptime(date, '%Y-%m-%d')
+#     # work_day = parse_date + timedelta(days=days)
+#     # while work_day.weekday() in (5, 6):
+#     #     work_day = work_day + timedelta(days=1)
+#     # return str(work_day.date())
+#
+#     # or
+#     work_day = datetime.strptime(date, '%Y-%m-%d') + timedelta(days=days)
+#     if work_day.weekday() in (5, 6):
+#         work_day += timedelta(days=7 - work_day.weekday())
+#     return str(work_day.date())
+#
+#
+# if __name__ == "__main__":
+#     print("Example:")
+#     print(vacation("2000-02-28", 5))
+#     # These "asserts" using only for self-checking and not necessary for auto-testing
+#     assert vacation("2018-07-01", 14) == "2018-07-16"
+#     assert vacation("2018-02-19", 10) == "2018-03-01"
+#     assert vacation("2000-02-28", 5) == "2000-03-06"
+#     assert vacation("1999-12-20", 14) == "2000-01-03"
+#     print("Coding complete? Click 'Check' to earn cool rewards!")
