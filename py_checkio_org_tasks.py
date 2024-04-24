@@ -13,10 +13,6 @@
 # assert first_word("hi") == "hi"
 #
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
-import random
-import re
-import statistics
-import string
 # def is_even(num: int) -> bool:
 #     # your code here
 #     return num & 1 == 0
@@ -1132,9 +1128,6 @@ import string
 # assert index_power([1, 2], 3) == -1
 #
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
-
-from collections import Counter
-
 
 # def is_majority(items: list[bool]) -> bool:
 #     if not items:
@@ -2949,3 +2942,54 @@ from collections import Counter
 #     == 25
 # )
 # print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# import datetime
+#
+#
+# def most_frequent_days(year):
+#     # Создаем список дней недели в порядке возрастания
+#     weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+#     # Создаем словарь для подсчета количества дней каждого дня недели
+#     days_count = {day: 0 for day in weekdays}
+#     # Перебираем все дни года
+#     for month in range(1, 13):
+#         for day in range(1, 32):
+#             try:
+#                 # Создаем объект datetime для текущей даты
+#                 date = datetime.datetime(year, month, day)
+#                 # Получаем день недели текущей даты
+#                 weekday = date.strftime("%A")
+#                 # Увеличиваем счетчик для текущего дня недели
+#                 days_count[weekday] += 1
+#             except ValueError:
+#                 # Если день выходит за пределы месяца, переходим к следующему месяцу
+#                 break
+#     # Находим максимальное количество дней
+#     max_count = max(days_count.values())
+#     # Формируем список наиболее частых дней недели
+#     most_frequent_days = [day for day, count in days_count.items() if count == max_count]
+#     return most_frequent_days
+#
+#
+# if __name__ == "__main__":
+#     print("Example:")
+#     print(most_frequent_days(1084))
+#
+#     # These "asserts" are used for self-checking and not for an auto-testing
+#     assert most_frequent_days(1084) == ["Tuesday", "Wednesday"]
+#     assert most_frequent_days(1167) == ["Sunday"]
+#     assert most_frequent_days(1216) == ["Friday", "Saturday"]
+#     assert most_frequent_days(1492) == ["Friday", "Saturday"]
+#     assert most_frequent_days(1770) == ["Monday"]
+#     assert most_frequent_days(1785) == ["Saturday"]
+#     assert most_frequent_days(212) == ["Wednesday", "Thursday"]
+#     assert most_frequent_days(1) == ["Monday"]
+#     assert most_frequent_days(2135) == ["Saturday"]
+#     assert most_frequent_days(3043) == ["Sunday"]
+#     assert most_frequent_days(2001) == ["Monday"]
+#     assert most_frequent_days(3150) == ["Sunday"]
+#     assert most_frequent_days(3230) == ["Tuesday"]
+#     assert most_frequent_days(328) == ["Monday", "Sunday"]
+#     assert most_frequent_days(2016) == ["Friday", "Saturday"]
+#     print("Coding complete? Click 'Check' to earn cool rewards!")
