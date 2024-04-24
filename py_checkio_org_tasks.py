@@ -1135,6 +1135,7 @@ import string
 
 from collections import Counter
 
+
 # def is_majority(items: list[bool]) -> bool:
 #     if not items:
 #         return False
@@ -2697,3 +2698,254 @@ from collections import Counter
 #     assert vacation("2000-02-28", 5) == "2000-03-06"
 #     assert vacation("1999-12-20", 14) == "2000-01-03"
 #     print("Coding complete? Click 'Check' to earn cool rewards!")
+
+
+# def is_ascending(items: list[int]) -> bool:
+#     return all(items[i] < items[i + 1] for i in range(len(items) - 1))
+#
+#
+# print("Example:")
+# print(is_ascending([4, 5, 6, 7, 3, 7, 9]))
+# # These "asserts" are used for self-checking
+# assert is_ascending([-5, 10, 99, 123456]) == True
+# assert is_ascending([99]) == True
+# assert is_ascending([4, 5, 6, 7, 3, 7, 9]) == False
+# assert is_ascending([]) == True
+# assert is_ascending([1, 1, 1, 1]) == False
+# assert is_ascending([1, 3, 3, 5]) == False
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# def remove_spaces(s: str) -> str:
+#     return ' '.join([char for char in s if not char.isspace()])
+#
+#
+# def verify_anagrams(a: str, b: str) -> bool:
+#     return sorted(remove_spaces(a).lower()) == sorted(remove_spaces(b).lower())
+#
+#
+# print("Example:")
+# print(verify_anagrams("Programming", "Gram Ring Mop"))
+# assert verify_anagrams("Programming", "Gram Ring Mop") == True
+# assert verify_anagrams("Hello", "Ole Oh") == False
+# assert verify_anagrams("Kyoto", "Tokyo") == True
+# assert verify_anagrams('A O X', 'x o a') == True
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# def fact_zeros(n: int) -> int:
+#     count = 0
+#     while n >= 5:
+#         n //= 5
+#         count += n
+#     return count
+#
+#
+# print("Example:")
+# print(fact_zeros(2))
+# # These "asserts" are used for self-checking
+# assert fact_zeros(2) == 0
+# assert fact_zeros(5) == 1
+# assert fact_zeros(20) == 4
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# # def unix_match(filename: str, pattern: str) -> bool:
+# # if not filename or not pattern:
+# #     return False
+# # if pattern in ("*", "**"):
+# #     return True
+# # if pattern == "*.*":
+# #     if "." in filename:
+# #         return True
+# #     else:
+# #         return False
+# # i = 0
+# # j = 0
+# # while i < len(filename) and j < len(pattern):
+# #     if pattern[j] == "*":
+# #         if j == len(pattern) - 1:
+# #             return True
+# #         while i < len(filename) and filename[i] != pattern[j + 1]:
+# #             i += 1
+# #     elif pattern[j] != "?" and pattern[j] != filename[i]:
+# #         return False
+# #     i += 1
+# #     j += 1
+# # if i < len(filename) or j < len(pattern):
+# #     return False
+# # return True
+#
+# # or
+# def match_question_mark(pattern_char: str, filename_char: str) -> bool:
+#     return pattern_char == "?" or pattern_char == filename_char
+#
+#
+# def match_star_pattern(filename: str, pattern: str, i: int, j: int) -> bool:
+#     while i < len(filename) and filename[i] != pattern[j + 1]:
+#         i += 1
+#     return i
+#
+#
+# def unix_match(filename: str, pattern: str) -> bool:
+#     if not filename or not pattern:
+#         return False
+#     if pattern in ("*", "**"):
+#         return True
+#     if pattern == "*.*":
+#         return "." in filename
+#     i, j = 0, 0
+#     while i < len(filename) and j < len(pattern):
+#         if pattern[j] == "*":
+#             if j == len(pattern) - 1:
+#                 return True
+#             i = match_star_pattern(filename, pattern, i, j)
+#         elif not match_question_mark(pattern[j], filename[i]):
+#             return False
+#         i += 1
+#         j += 1
+#     return i == len(filename) and j == len(pattern)
+#
+#
+# print("Example:")
+# print(unix_match("somefile.txt", "*"))
+# # These "asserts" are used for self-checking
+# assert unix_match("somefile.txt", "*") == True
+# assert unix_match("other.exe", "*") == True
+# assert unix_match("my.exe", "*.txt") == False
+# assert unix_match("log1.txt", "log?.txt") == True
+# assert unix_match("log12.txt", "log?.txt") == False
+# assert unix_match("log12.txt", "log??.txt") == True
+# assert unix_match('log12.txt', '**') == True
+# assert unix_match('apache1.log', '*.*') == True
+# assert unix_match('12apache1', '*.*') == False
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# def highest_building(buildings: list[list[int]]) -> list[int]:
+#     max_height = 0
+#     building_number = 0
+#
+#     for col in range(len(buildings[0])):
+#         height = sum(row[col] for row in buildings)
+#         if height > max_height:
+#             max_height = height
+#             building_number = col + 1
+#
+#     return [building_number, max_height]
+#
+#
+# print("Example:")
+# print(highest_building([[0, 0, 1, 0], [1, 0, 1, 0], [1, 1, 1, 0], [1, 1, 1, 1]]))
+# # These "asserts" are used for self-checking
+# assert highest_building([[0, 0, 1, 0], [1, 0, 1, 0], [1, 1, 1, 0], [1, 1, 1, 1]]) == [3, 4]
+# assert highest_building([[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 1]]) == [4, 1]
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# def checkio(game_result: list[str]) -> str:
+#     for row in game_result:
+#         if row == "XXX":
+#             return "X"
+#         elif row == "OOO":
+#             return "O"
+#
+#     for col in range(3):
+#         if game_result[0][col] == game_result[1][col] == game_result[2][col] and game_result[0][col] != '.':
+#             return game_result[0][col]
+#
+#     if game_result[0][0] == game_result[1][1] == game_result[2][2] and game_result[0][0] != '.':
+#         return game_result[0][0]
+#
+#     if game_result[0][2] == game_result[1][1] == game_result[2][0] and game_result[0][2] != '.':
+#         return game_result[0][2]
+#
+#     return "D"
+#
+# print("Example:")
+# print(checkio(["X.O", "XX.", "XOO"]))
+# # These "asserts" are used for self-checking
+# assert checkio(["X.O", "XX.", "XOO"]) == "X"
+# assert checkio(["OO.", "XOX", "XOX"]) == "O"
+# assert checkio(["OOX", "XXO", "OXX"]) == "D"
+# assert checkio(["O.X", "XX.", "XOO"]) == "X"
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
+
+
+# def cheapest_flight(costs: list, a: str, b: str) -> int:
+#     # Create a dictionary to store the prices for each flight
+#     prices = {}
+#     for flight in costs:
+#         city1, city2, price = flight
+#         if city1 not in prices:
+#             prices[city1] = {}
+#         if city2 not in prices:
+#             prices[city2] = {}
+#         prices[city1][city2] = price
+#         prices[city2][city1] = price
+#
+#     # Perform Dijkstra's algorithm to find the cheapest flight from city a to city b
+#     visited = {a: 0}
+#     path = {}
+#
+#     cities = set(prices.keys())
+#
+#     while cities:
+#         min_city = None
+#         for city in cities:
+#             if city in visited:
+#                 if min_city is None:
+#                     min_city = city
+#                 elif visited[city] < visited[min_city]:
+#                     min_city = city
+#
+#         if min_city is None:
+#             break
+#
+#         cities.remove(min_city)
+#         current_weight = visited[min_city]
+#
+#         for neighbor, weight in prices[min_city].items():
+#             new_weight = current_weight + weight
+#             if neighbor not in visited or new_weight < visited[neighbor]:
+#                 visited[neighbor] = new_weight
+#                 path[neighbor] = min_city
+#
+#     # Return the price of the flight from city a to city b
+#     return visited.get(b, 0)
+#
+#
+# print("Example:")
+# print(cheapest_flight([["A", "C", 100], ["A", "B", 20], ["B", "C", 50]], "A", "C"))
+#
+# # These "asserts" are used for self-checking
+# assert (
+#     cheapest_flight([["A", "C", 100], ["A", "B", 20], ["B", "C", 50]], "A", "C") == 70
+# )
+# assert (
+#     cheapest_flight([["A", "C", 100], ["A", "B", 20], ["B", "C", 50]], "C", "A") == 70
+# )
+# assert (
+#     cheapest_flight(
+#         [
+#             ["A", "C", 40],
+#             ["A", "B", 20],
+#             ["A", "D", 20],
+#             ["B", "C", 50],
+#             ["D", "C", 70],
+#         ],
+#         "D",
+#         "C",
+#     )
+#     == 60
+# )
+# assert (
+#     cheapest_flight([["A", "C", 100], ["A", "B", 20], ["D", "F", 900]], "A", "F") == 0
+# )
+# assert (
+#     cheapest_flight(
+#         [["A", "B", 10], ["A", "C", 15], ["B", "D", 15], ["C", "D", 10]], "A", "D"
+#     )
+#     == 25
+# )
+# print("The mission is done! Click 'Check Solution' to earn rewards!")
