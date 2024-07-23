@@ -1,2 +1,1 @@
-# self-study_lerning
-self-study task
+Summary of practical exercises during self-study
